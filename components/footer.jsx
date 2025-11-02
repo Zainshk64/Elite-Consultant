@@ -1,0 +1,130 @@
+"use client"
+
+import Link from "next/link"
+import { Facebook, Instagram, Linkedin, Mail, Phone, MapPin } from "lucide-react"
+import { motion } from "framer-motion"
+
+export default function Footer() {
+  return (
+    <footer className="bg-card border-t border-border transition-colors duration-300" id="contact">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+          {/* Brand */}
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
+            <div className="flex items-center gap-2 mb-4">
+              <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-green-600 rounded-lg flex items-center justify-center">
+                <span className="text-white font-bold">EC</span>
+              </div>
+              <span className="font-bold text-lg">Elite Consultant</span>
+            </div>
+            <p className="text-muted-foreground text-sm">
+              Your trusted partner in global education and career advancement.
+            </p>
+          </motion.div>
+
+          {/* Services */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+          >
+            <h3 className="font-semibold mb-4">Services</h3>
+            <ul className="space-y-2">
+              <li>
+                <Link href="/services" className="text-muted-foreground hover:text-foreground transition-colors">
+                  Education Visa
+                </Link>
+              </li>
+              <li>
+                <Link href="/services" className="text-muted-foreground hover:text-foreground transition-colors">
+                  Career Counseling
+                </Link>
+              </li>
+              <li>
+                <Link href="/services" className="text-muted-foreground hover:text-foreground transition-colors">
+                  Test Prep
+                </Link>
+              </li>
+              <li>
+                <Link href="/services" className="text-muted-foreground hover:text-foreground transition-colors">
+                  University Placement
+                </Link>
+              </li>
+            </ul>
+          </motion.div>
+
+          {/* Quick Links */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
+            <h3 className="font-semibold mb-4">Company</h3>
+            <ul className="space-y-2">
+              <li>
+                <Link href="/about" className="text-muted-foreground hover:text-foreground transition-colors">
+                  About Us
+                </Link>
+              </li>
+              <li>
+                <Link href="/appointment" className="text-muted-foreground hover:text-foreground transition-colors">
+                  Book Appointment
+                </Link>
+              </li>
+              <li>
+                <Link href="/" className="text-muted-foreground hover:text-foreground transition-colors">
+                  Blog
+                </Link>
+              </li>
+              <li>
+                <Link href="/" className="text-muted-foreground hover:text-foreground transition-colors">
+                  FAQ
+                </Link>
+              </li>
+            </ul>
+          </motion.div>
+
+          {/* Contact */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+          >
+            <h3 className="font-semibold mb-4">Contact</h3>
+            <ul className="space-y-3">
+              <li className="flex items-start gap-2">
+                <Phone size={18} className="text-blue-600 mt-1 flex-shrink-0" />
+                <span className="text-muted-foreground">+92 (123) 456-7890</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <Mail size={18} className="text-blue-600 mt-1 flex-shrink-0" />
+                <span className="text-muted-foreground">info@eliteconsultant.com</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <MapPin size={18} className="text-blue-600 mt-1 flex-shrink-0" />
+                <span className="text-muted-foreground">123 Consulting Ave, City Center</span>
+              </li>
+            </ul>
+          </motion.div>
+        </div>
+
+        {/* Social Links */}
+        <div className="border-t border-border pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="text-muted-foreground text-sm">&copy; 2025 Elite Consultant. All rights reserved.</p>
+          <div className="flex gap-4">
+            {[Facebook, Instagram, Linkedin].map((Icon, i) => (
+              <motion.a
+                key={i}
+                href="#"
+                whileHover={{ scale: 1.1 }}
+                className="w-10 h-10 rounded-full bg-muted hover:bg-blue-600 hover:text-white flex items-center justify-center transition-all duration-200"
+              >
+                <Icon size={20} />
+              </motion.a>
+            ))}
+          </div>
+        </div>
+      </div>
+    </footer>
+  )
+}
