@@ -35,14 +35,14 @@ export default function Navbar() {
     <>
       <motion.div
         className="fixed top-0 left-0 right-0 z-50 flex justify-center px-4 pt-6"
-        initial={{ y: -100, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
+        initial={{  opacity: 0 }}
+        animate={{  opacity: 1 }}
+        transition={{ duration: 0.8, ease: "fadeIn" }}
       >
         <motion.nav
           className={`relative w-full max-w-6xl transition-all duration-500 ${
             scrolled
-              ? "bg-white/30 backdrop-blur-2xl border border-orange-300/40 shadow-lg shadow-orange-200/40"
+              ? "bg-white/30 backdrop-blur-lg border border-orange-300/40 shadow shadow-orange-200/40"
               : "bg-white/40 backdrop-blur-xl border border-orange-200/20"
           } rounded-2xl`}
           animate={{ y: scrolled ? -10 : 0, scale: scrolled ? 0.98 : 1 }}
@@ -55,7 +55,7 @@ export default function Navbar() {
               {/* Logo */}
               <a href="/" className="flex items-center gap-3 group relative z-10">
                 <motion.div
-                  className="relative w-12 h-12 bg-gradient-to-br from-orange-400 to-orange-600 rounded-2xl flex items-center justify-center overflow-hidden"
+                  className="relative w-12 h-12 bg-gradient-to-br from-[#EE7A36] to-orange-400 rounded-2xl flex items-center justify-center overflow-hidden"
                   whileHover={{ rotate: 360, scale: 1.1 }}
                   transition={{ duration: 0.6 }}
                 >
@@ -63,7 +63,7 @@ export default function Navbar() {
                   <Sparkles className="text-white" size={24} />
                 </motion.div>
                 <div className="hidden lg:block">
-                  <span className="block font-bold text-lg text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-orange-700 group-hover:from-orange-600 group-hover:to-orange-500 transition-all duration-500">
+                  <span className="block font-bold text-lg text-transparent bg-clip-text bg-gradient-to-r from-[#EE7A36] to-orange-700 transition-all duration-500">
                     HnH Consultant
                   </span>
                   <span className="block text-xs text-gray-500 -mt-1">Your Success Partner</span>
@@ -71,7 +71,7 @@ export default function Navbar() {
               </a>
 
               {/* Nav Items */}
-              <div className="hidden md:flex items-center gap-2 bg-orange-50/10 rounded-xl px-3 py-2 backdrop-blur-sm border border-orange-200/30">
+              <div className="hidden md:flex items-center gap-2 rounded-xl px-3 py-2  ">
                 {navItems.map((item, index) => (
                   <a key={item.href} href={item.href}>
                     <motion.div
@@ -81,7 +81,7 @@ export default function Navbar() {
                       transition={{ delay: index * 0.1 }}
                       whileHover={{ scale: 1.05 }}
                     >
-                      <span className="relative z-10 text-sm font-medium text-gray-700 group-hover:text-orange-600 transition-colors duration-300">
+                      <span className="relative z-10 text-md font-medium text-gray-700 group-hover:text-orange-600 transition-colors duration-300">
                         {item.label}
                       </span>
                       <motion.div
@@ -101,7 +101,7 @@ export default function Navbar() {
               <div className="flex items-center gap-3">
                 <a href="/register" className="hidden sm:block">
                   <motion.button
-                    className="relative px-6 py-2.5 bg-gradient-to-r from-orange-500 to-orange-600 text-white text-sm font-semibold rounded-xl overflow-hidden group"
+                    className="relative px-6 py-3 bg-gradient-to-r from-[#EE7A36] to-orange-400 text-white text-sm font-semibold rounded-xl overflow-hidden group"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                   >
@@ -109,7 +109,7 @@ export default function Navbar() {
                       Register Now
                      
                     </span>
-                    <div className="absolute inset-0 bg-gradient-to-r from-orange-600 to-orange-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    <div className="absolute inset-0 bg-gradient-to-r from-[#EE7A36] to-orange-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     <div className="absolute -inset-1 bg-gradient-to-r from-orange-400 to-orange-600 rounded-xl blur opacity-30 group-hover:opacity-50 transition-opacity duration-300" />
                   </motion.button>
                 </a>
