@@ -42,8 +42,8 @@ export default function Navbar() {
         <motion.nav
           className={`relative w-full max-w-6xl transition-all duration-500 ${
             scrolled
-              ? "bg-white/30 backdrop-blur-lg border border-orange-300/40 shadow shadow-orange-200/40"
-              : "bg-white/40 backdrop-blur-xl border border-orange-200/20"
+              ? "bg-white/40 backdrop-blur-md border border-orange-300/40 shadow shadow-orange-200/40"
+              : "bg-white/20 backdrop-blur-[1px] border border-orange-200/20"
           } rounded-2xl`}
           animate={{ y: scrolled ? -10 : 0, scale: scrolled ? 0.98 : 1 }}
           transition={{ duration: 0.3 }}
@@ -101,7 +101,7 @@ export default function Navbar() {
               <div className="flex items-center gap-3">
                 <a href="/register" className="hidden sm:block">
                   <motion.button
-                    className="relative px-6 py-3 bg-gradient-to-r from-[#EE7A36] to-orange-400 text-white text-sm font-semibold rounded-xl overflow-hidden group"
+                    className="relative px-6 py-3 cursor-pointer bg-gradient-to-r from-[#EE7A36] to-orange-400 text-white text-md font-semibold rounded-xl overflow-hidden group"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                   >
@@ -110,7 +110,7 @@ export default function Navbar() {
                      
                     </span>
                     <div className="absolute inset-0 bg-gradient-to-r from-[#EE7A36] to-orange-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                    <div className="absolute -inset-1 bg-gradient-to-r from-orange-400 to-orange-600 rounded-xl blur opacity-30 group-hover:opacity-50 transition-opacity duration-300" />
+                    <div className="absolute -inset-1 bg-gradient-to-r from-orange-400 to-orange-600 rounded-xl  opacity-30 group-hover:opacity-50 transition-opacity duration-300" />
                   </motion.button>
                 </a>
 

@@ -46,20 +46,21 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center py-34 overflow-hidden">
+    <section className="relative min-h-screen flex items-center md:px-14 py-34 overflow-hidden">
       {/* Background Image */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
           backgroundImage:
-            "url('https://images.pexels.com/photos/32037884/pexels-photo-32037884.jpeg')", // Plane + scenery
+          "url('/hero.png')",
+            // "url('https://images.pexels.com/photos/32037884/pexels-photo-32037884.jpeg')", // Plane + scenery
           // "url('https://images.unsplash.com/photo-1584084807193-bed442df7a75?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8YnJpdGlzaCUyMGFpcndheXN8ZW58MHx8MHx8fDA%3D&fm=jpg&q=60&w=3000')",
           transform: `translateY(${scrollY * 0.5}px)`,
         }}
       />
 
       {/* Orange/white gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#000000cc] via-[#000000aa] to-[#00000088]" />
+      <div className="absolute inset-0 bg-gradient-to-r from-[#000000cc] via-[#000000aa]/70 to-[#00000088]/30" />
 
       {/* Replace blue blobs with soft warm glows */}
       <div className="absolute inset-0">
@@ -73,8 +74,8 @@ export default function Hero() {
       {/* Subtle radial light */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(251,146,60,0.1),transparent_50%)]" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center max-w-4xl mx-auto">
+      <div className="px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="">
           {/* Welcome Glow */}
           <motion.div
             initial={{ opacity: 0, y: -20 }}
@@ -85,7 +86,7 @@ export default function Hero() {
               border border-orange-400/30 rounded-full mb-8 
               backdrop-blur-xl shadow-lg shadow-orange-300/10"
           >
-            <span className="text-orange-300 text-sm font-semibold tracking-wider">
+            <span className="text-[#EE7A36] text-sm font-semibold tracking-wider">
               WELCOME TO HnH CONSULTANT
             </span>
           </motion.div>
@@ -111,7 +112,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.8 }}
-            className="text-xl text-gray-200 mb-10 max-w-2xl mx-auto leading-relaxed"
+            className="text-xl text-gray-200 mb-10 max-w-2xl mx- leading-relaxed"
           >
             We guide students and professionals through their international
             education and career journey with expertise, dedication, and proven
@@ -123,7 +124,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 0.8 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+            className="flex flex-col sm:flex-row gap-4 justify- items-center"
           >
             <motion.a
               href="/appointment"
@@ -164,7 +165,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8, duration: 0.8 }}
-            className="grid grid-cols-1 sm:grid-cols-3 gap-8 mt-20 max-w-3xl mx-auto"
+            className="grid grid-cols-1 sm:grid-cols-3 gap-8 mt-20 max-w-3xl "
           >
             {[
               { number: 5000, label: "Students Guided", suffix: "+" },
@@ -181,13 +182,13 @@ export default function Hero() {
                 <div
                   className="bg-white/5 backdrop-blur-xl rounded-2xl p-6 
                   border border-orange-300/20 
-                  hover:border-orange-300/40 
+                  hover:border-[#EE7A36]/40 
                   transition-all duration-300
                   hover:shadow-xl hover:shadow-orange-300/20 group-hover:scale-105"
                 >
                   <div
                     className="text-4xl md:text-5xl font-bold 
-                    bg-gradient-to-r from-[#EE7A36] via-yellow-300 to-orange-300 
+                   bg-[#EE7A36]
                     bg-clip-text text-transparent mb-2"
                   >
                     <CountUp end={stat.number} suffix={stat.suffix} />
