@@ -9,11 +9,11 @@ const geistMono = Geist_Mono({ subsets: ["latin"] });
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en" className="">
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>Elite Consultant - Your Gateway to Global Opportunities</title>
+        <title>HnH Consultant - Your Gateway to Global Opportunities</title>
       </head>
       <body className={`${geistSans.className} bg-background text-foreground`}>
           {/* <RootLayoutClient geistSans={geistSans}> */}

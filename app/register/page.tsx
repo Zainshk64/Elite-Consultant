@@ -8,7 +8,7 @@ export default function RegisterPage() {
         {/* Header */}
         <div className="text-center mb-8">
           
-          <h1 className="text-3xl font-serif font-bold text-foreground mb-2">Elite Consultant</h1>
+          <h1 className="text-3xl font-serif font-bold text-foreground mb-2">HnH Consultant</h1>
           <p className="text-foreground/60">Create your account to book appointments</p>
         </div>
 

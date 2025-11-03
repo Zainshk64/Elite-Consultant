@@ -3,7 +3,7 @@
 
 /* Force dark mode - no light mode */
 html {
-  color-scheme: dark;
+  /* color-scheme: dark; */
 }
 
 .dark {

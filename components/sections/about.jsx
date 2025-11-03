@@ -21,7 +21,7 @@ export default function About() {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <h1 className="text-5xl md:text-6xl font-bold mb-4 text-balance">About Elite Consultant</h1>
+          <h1 className="text-5xl md:text-6xl font-bold mb-4 text-balance">About HnH Consultant</h1>
           <p className="text-lg text-gray-400 max-w-2xl mx-auto">
             Leading the way in international education consultancy since 2014
           </p>
@@ -36,7 +36,7 @@ export default function About() {
           >
             <h2 className="text-4xl font-bold mb-6">Our Story</h2>
             <p className="text-gray-400 text-lg mb-4">
-              Founded in 2014, Elite Consultant has been committed to transforming dreams into reality for thousands of
+              Founded in 2014, HnH Consultant has been committed to transforming dreams into reality for thousands of
               students seeking global education opportunities.
             </p>
             <p className="text-gray-400 text-lg mb-4">

@@ -12,10 +12,10 @@ export default function Footer() {
           {/* Brand */}
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-lg flex items-center justify-center">
+              <div className="w-10 h-10 bg-gradient-to-br from-[#EE7A36] to-orange-400 rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold">EC</span>
               </div>
-              <span className="font-bold text-lg">Elite Consultant</span>
+              <span className="font-bold text-lg">HnH Consultant</span>
             </div>
             <p className="text-gray-400 text-sm">
               Your trusted partner in global education and career advancement.
@@ -93,15 +93,15 @@ export default function Footer() {
             <h3 className="font-semibold mb-4">Contact</h3>
             <ul className="space-y-3">
               <li className="flex items-start gap-2">
-                <Phone size={18} className="text-blue-600 mt-1 flex-shrink-0" />
+                <Phone size={18} className="text-[#EE7A36] mt-1 flex-shrink-0" />
                 <span className="text-gray-400">+92 (123) 456-7890</span>
               </li>
               <li className="flex items-start gap-2">
-                <Mail size={18} className="text-blue-600 mt-1 flex-shrink-0" />
-                <span className="text-gray-400">info@eliteconsultant.com</span>
+                <Mail size={18} className="text-[#EE7A36] mt-1 flex-shrink-0" />
+                <span className="text-gray-400">info@HnHconsultant.com</span>
               </li>
               <li className="flex items-start gap-2">
-                <MapPin size={18} className="text-blue-600 mt-1 flex-shrink-0" />
+                <MapPin size={18} className="text-[#EE7A36] mt-1 flex-shrink-0" />
                 <span className="text-gray-400">123 Consulting Ave, City Center</span>
               </li>
             </ul>
@@ -110,14 +110,14 @@ export default function Footer() {
 
         {/* Social Links */}
         <div className="border-t border-border pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-gray-400 text-sm">&copy; 2025 Elite Consultant. All rights reserved.</p>
+          <p className="text-gray-400 text-sm">&copy; 2025 HnH Consultant. All rights reserved.</p>
           <div className="flex gap-4">
             {[Facebook, Instagram, Linkedin].map((Icon, i) => (
               <motion.a
                 key={i}
                 href="#"
                 whileHover={{ scale: 1.1 }}
-                className="w-10 h-10 rounded-full bg-muted hover:bg-blue-600 hover:text-white flex items-center justify-center transition-all duration-200"
+                className="w-10 h-10 rounded-full bg-muted hover:bg-[#EE7A36] hover:text-white flex items-center justify-center transition-all duration-200"
               >
                 <Icon size={20} />
               </motion.a>
