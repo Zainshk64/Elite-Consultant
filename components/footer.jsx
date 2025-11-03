@@ -1,7 +1,7 @@
 "use client"
 
 import Link from "next/link"
-import { Facebook, Instagram, Linkedin, Mail, Phone, MapPin } from "lucide-react"
+import { Facebook, Instagram, Linkedin, Mail, Phone, MapPin, Sparkles } from "lucide-react"
 import { motion } from "framer-motion"
 
 export default function Footer() {
@@ -13,7 +13,7 @@ export default function Footer() {
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
             <div className="flex items-center gap-2 mb-4">
               <div className="w-10 h-10 bg-gradient-to-br from-[#EE7A36] to-orange-400 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold">EC</span>
+                  <Sparkles className="text-white" size={24} />
               </div>
               <span className="font-bold text-lg">HnH Consultant</span>
             </div>

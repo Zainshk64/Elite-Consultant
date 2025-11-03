@@ -42,8 +42,8 @@ export default function Navbar() {
         <motion.nav
           className={`relative w-full max-w-6xl transition-all duration-500 ${
             scrolled
-              ? "bg-white/80 backdrop-blur-2xl border border-orange-300/40 shadow-lg shadow-orange-200/40"
-              : "bg-white/60 backdrop-blur-xl border border-orange-200/20"
+              ? "bg-white/30 backdrop-blur-2xl border border-orange-300/40 shadow-lg shadow-orange-200/40"
+              : "bg-white/40 backdrop-blur-xl border border-orange-200/20"
           } rounded-2xl`}
           animate={{ y: scrolled ? -10 : 0, scale: scrolled ? 0.98 : 1 }}
           transition={{ duration: 0.3 }}
@@ -71,7 +71,7 @@ export default function Navbar() {
               </a>
 
               {/* Nav Items */}
-              <div className="hidden md:flex items-center gap-2 bg-orange-50/50 rounded-xl px-3 py-2 backdrop-blur-sm border border-orange-200/30">
+              <div className="hidden md:flex items-center gap-2 bg-orange-50/10 rounded-xl px-3 py-2 backdrop-blur-sm border border-orange-200/30">
                 {navItems.map((item, index) => (
                   <a key={item.href} href={item.href}>
                     <motion.div
