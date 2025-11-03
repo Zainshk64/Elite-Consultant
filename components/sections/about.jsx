@@ -22,7 +22,7 @@ export default function About() {
           className="text-center mb-16"
         >
           <h1 className="text-5xl md:text-6xl font-bold mb-4 text-balance">About Elite Consultant</h1>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg text-gray-400 max-w-2xl mx-auto">
             Leading the way in international education consultancy since 2014
           </p>
         </motion.div>
@@ -35,15 +35,15 @@ export default function About() {
             transition={{ duration: 0.5 }}
           >
             <h2 className="text-4xl font-bold mb-6">Our Story</h2>
-            <p className="text-muted-foreground text-lg mb-4">
+            <p className="text-gray-400 text-lg mb-4">
               Founded in 2014, Elite Consultant has been committed to transforming dreams into reality for thousands of
               students seeking global education opportunities.
             </p>
-            <p className="text-muted-foreground text-lg mb-4">
+            <p className="text-gray-400 text-lg mb-4">
               With a team of experienced consultants and partnerships with over 500 universities worldwide, we provide
               comprehensive guidance that goes beyond just paperwork.
             </p>
-            <p className="text-muted-foreground text-lg">
+            <p className="text-gray-400 text-lg">
               Our mission is to make international education accessible and achievable for everyone, regardless of their
               background or circumstances.
             </p>
@@ -71,11 +71,11 @@ export default function About() {
                   whileHover={{ y: -10 }}
                   className="p-6 bg-card rounded-xl border border-border text-center"
                 >
-                  <div className="w-16 h-16 bg-gradient-to-br from-blue-600 to-green-600 rounded-xl flex items-center justify-center mx-auto mb-4">
+                  <div className="w-16 h-16 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-xl flex items-center justify-center mx-auto mb-4">
                     <Icon size={32} className="text-white" />
                   </div>
                   <h3 className="font-bold text-lg mb-2">{value.title}</h3>
-                  <p className="text-muted-foreground text-sm">{value.description}</p>
+                  <p className="text-gray-400 text-sm">{value.description}</p>
                 </motion.div>
               )
             })}
@@ -83,7 +83,7 @@ export default function About() {
         </motion.div>
 
         {/* Stats */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 bg-gradient-to-r from-blue-600 to-green-600 rounded-xl p-12 text-white">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-xl p-12 text-white">
           {[
             { number: "10+", label: "Years Experience" },
             { number: "5000+", label: "Students Guided" },

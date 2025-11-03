@@ -50,18 +50,18 @@ export default function AppointmentBooking() {
             <CheckCircle size={40} className="text-white" />
           </motion.div>
           <h1 className="text-3xl font-bold mb-2">Booking Confirmed!</h1>
-          <p className="text-muted-foreground mb-6">
+          <p className="text-gray-400 mb-6">
             Thank you for scheduling a consultation. We'll contact you shortly to confirm your appointment details.
           </p>
           <div className="bg-card rounded-lg p-6 mb-6 border border-border">
-            <p className="text-sm text-muted-foreground mb-2">Service:</p>
+            <p className="text-sm text-gray-400 mb-2">Service:</p>
             <p className="font-semibold mb-4">{services.find((s) => s.id === formData.serviceType)?.name}</p>
-            <p className="text-sm text-muted-foreground mb-2">Email:</p>
+            <p className="text-sm text-gray-400 mb-2">Email:</p>
             <p className="font-semibold">{formData.email}</p>
           </div>
           <button
             onClick={() => (window.location.href = "/")}
-            className="w-full py-3 bg-gradient-to-r from-blue-600 to-green-600 text-white rounded-lg font-semibold"
+            className="w-full py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-lg font-semibold"
           >
             Return Home
           </button>
@@ -76,7 +76,7 @@ export default function AppointmentBooking() {
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
           <div className="text-center mb-12">
             <h1 className="text-4xl md:text-5xl font-bold mb-4">Book Your Consultation</h1>
-            <p className="text-lg text-muted-foreground">Schedule a meeting with our expert consultants</p>
+            <p className="text-lg text-gray-400">Schedule a meeting with our expert consultants</p>
           </div>
 
           {/* Progress Steps */}
@@ -86,13 +86,13 @@ export default function AppointmentBooking() {
                 <motion.div
                   className={`w-12 h-12 rounded-full flex items-center justify-center font-bold mb-2 transition-all ${
                     s <= step
-                      ? "bg-gradient-to-r from-blue-600 to-green-600 text-white"
-                      : "bg-muted text-muted-foreground"
+                      ? "bg-gradient-to-r from-cyan-500 to-blue-600 text-white"
+                      : "bg-muted text-gray-400"
                   }`}
                 >
                   {s}
                 </motion.div>
-                <span className="text-sm text-muted-foreground">
+                <span className="text-sm text-gray-400">
                   {s === 1 ? "Service" : s === 2 ? "Details" : "Confirm"}
                 </span>
                 {s < 3 && <div className={`w-full h-1 mt-4 ${s < step ? "bg-green-600" : "bg-muted"}`} />}
@@ -139,7 +139,7 @@ export default function AppointmentBooking() {
                 <div>
                   <label className="block text-sm font-medium mb-2">Preferred Date</label>
                   <div className="relative">
-                    <Calendar className="absolute left-3 top-3 text-muted-foreground" size={20} />
+                    <Calendar className="absolute left-3 top-3 text-gray-400" size={20} />
                     <input
                       type="date"
                       name="date"
@@ -154,7 +154,7 @@ export default function AppointmentBooking() {
                 <div>
                   <label className="block text-sm font-medium mb-2">Preferred Time</label>
                   <div className="relative">
-                    <Clock className="absolute left-3 top-3 text-muted-foreground" size={20} />
+                    <Clock className="absolute left-3 top-3 text-gray-400" size={20} />
                     <input
                       type="time"
                       name="time"
@@ -176,7 +176,7 @@ export default function AppointmentBooking() {
                 <div>
                   <label className="block text-sm font-medium mb-2">Full Name</label>
                   <div className="relative">
-                    <User className="absolute left-3 top-3 text-muted-foreground" size={20} />
+                    <User className="absolute left-3 top-3 text-gray-400" size={20} />
                     <input
                       type="text"
                       name="fullName"
@@ -192,7 +192,7 @@ export default function AppointmentBooking() {
                 <div>
                   <label className="block text-sm font-medium mb-2">Email Address</label>
                   <div className="relative">
-                    <Mail className="absolute left-3 top-3 text-muted-foreground" size={20} />
+                    <Mail className="absolute left-3 top-3 text-gray-400" size={20} />
                     <input
                       type="email"
                       name="email"
@@ -208,7 +208,7 @@ export default function AppointmentBooking() {
                 <div>
                   <label className="block text-sm font-medium mb-2">Phone Number</label>
                   <div className="relative">
-                    <Phone className="absolute left-3 top-3 text-muted-foreground" size={20} />
+                    <Phone className="absolute left-3 top-3 text-gray-400" size={20} />
                     <input
                       type="tel"
                       name="phone"
@@ -224,7 +224,7 @@ export default function AppointmentBooking() {
                 <div>
                   <label className="block text-sm font-medium mb-2">Message (Optional)</label>
                   <div className="relative">
-                    <MessageSquare className="absolute left-3 top-3 text-muted-foreground" size={20} />
+                    <MessageSquare className="absolute left-3 top-3 text-gray-400" size={20} />
                     <textarea
                       name="message"
                       value={formData.message}
@@ -262,7 +262,7 @@ export default function AppointmentBooking() {
                     if (step === 2 && (!formData.date || !formData.time)) return
                     setStep(step + 1)
                   }}
-                  className="flex-1 py-3 bg-gradient-to-r from-blue-600 to-green-600 text-white rounded-lg font-semibold hover:shadow-lg transition-all"
+                  className="flex-1 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-lg font-semibold hover:shadow-lg transition-all"
                 >
                   Next
                 </motion.button>
@@ -271,7 +271,7 @@ export default function AppointmentBooking() {
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                   type="submit"
-                  className="flex-1 py-3 bg-gradient-to-r from-blue-600 to-green-600 text-white rounded-lg font-semibold hover:shadow-lg transition-all"
+                  className="flex-1 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-lg font-semibold hover:shadow-lg transition-all"
                 >
                   Confirm Booking
                 </motion.button>

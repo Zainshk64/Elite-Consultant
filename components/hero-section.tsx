@@ -20,7 +20,7 @@ export default function HeroSection() {
   return (
     <div
       ref={heroRef}
-      className="relative min-h-screen overflow-hidden bg-gradient-to-br from-background via-background to-primary/5 flex flex-col items-center justify-center"
+      className="relative min-h-screen overflow-hidden bg-linear-to-br from-background via-background to-primary/5 flex flex-col items-center justify-center"
     >
       <div
         className="absolute inset-0 opacity-30"

@@ -69,7 +69,7 @@ export default function AppointmentBooking() {
         {/* Header */}
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4 text-balance">Book Your Session</h1>
-          <p className="text-lg text-muted-foreground">Follow the steps below to secure your appointment</p>
+          <p className="text-lg text-gray-400">Follow the steps below to secure your appointment</p>
         </div>
 
         {/* Progress Steps */}
@@ -78,7 +78,7 @@ export default function AppointmentBooking() {
             <div key={stepNum} className="flex items-center flex-1">
               <div
                 className={`w-10 h-10 rounded-full flex items-center justify-center font-semibold transition-all duration-300 ${
-                  stepNum <= step ? "bg-primary text-primary-foreground" : "bg-muted text-muted-foreground"
+                  stepNum <= step ? "bg-primary text-primary-foreground" : "bg-muted text-gray-400"
                 }`}
               >
                 {stepNum < step ? <CheckCircle className="w-6 h-6" /> : stepNum}
@@ -128,7 +128,7 @@ export default function AppointmentBooking() {
                       }`}
                     >
                       <h3 className="font-semibold text-foreground mb-2">{service.name}</h3>
-                      <p className="text-sm text-muted-foreground mb-3">{service.duration}</p>
+                      <p className="text-sm text-gray-400 mb-3">{service.duration}</p>
                       <p className="text-lg font-bold text-primary">{service.price}</p>
                     </button>
                   ))}

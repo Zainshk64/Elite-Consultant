@@ -44,7 +44,7 @@ export default function RegisterForm() {
           Full Name
         </label>
         <div className="relative">
-          <User className="absolute left-3 top-3 text-primary/50" size={20} />
+          <User className="absolute left-3 top-3.5 text-cyan-500/70" size={20} />
           <input
             id="name"
             name="name"
@@ -52,7 +52,7 @@ export default function RegisterForm() {
             placeholder="John Doe"
             value={formData.name}
             onChange={handleChange}
-            className="w-full pl-10 pr-4 py-3 bg-input border border-border rounded-lg text-foreground placeholder:text-foreground/40 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/50 transition-colors"
+            className="w-full pl-10 pr-4 py-3 bg-input border border-border rounded-lg text-foreground placeholder:text-foreground/40 focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500/50 transition-colors"
             required
           />
         </div>
@@ -64,7 +64,7 @@ export default function RegisterForm() {
           Email Address
         </label>
         <div className="relative">
-          <Mail className="absolute left-3 top-3 text-primary/50" size={20} />
+          <Mail className="absolute left-3 top-3.5 text-cyan-500/70" size={20} />
           <input
             id="email"
             name="email"
@@ -72,7 +72,7 @@ export default function RegisterForm() {
             placeholder="you@example.com"
             value={formData.email}
             onChange={handleChange}
-            className="w-full pl-10 pr-4 py-3 bg-input border border-border rounded-lg text-foreground placeholder:text-foreground/40 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/50 transition-colors"
+            className="w-full pl-10 pr-4 py-3 bg-input border border-border rounded-lg text-foreground placeholder:text-foreground/40 focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500/50 transition-colors"
             required
           />
         </div>
@@ -84,7 +84,7 @@ export default function RegisterForm() {
           Password
         </label>
         <div className="relative">
-          <Lock className="absolute left-3 top-3 text-primary/50" size={20} />
+          <Lock className="absolute left-3 top-3.5 text-cyan-500/70" size={20} />
           <input
             id="password"
             name="password"
@@ -92,13 +92,13 @@ export default function RegisterForm() {
             placeholder="Create a strong password"
             value={formData.password}
             onChange={handleChange}
-            className="w-full pl-10 pr-10 py-3 bg-input border border-border rounded-lg text-foreground placeholder:text-foreground/40 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/50 transition-colors"
+            className="w-full pl-10 pr-10 py-3 bg-input border border-border rounded-lg text-foreground placeholder:text-foreground/40 focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500/50 transition-colors"
             required
           />
           <button
             type="button"
             onClick={() => setShowPassword(!showPassword)}
-            className="absolute right-3 top-3 text-primary/50 hover:text-primary transition-colors"
+            className="absolute right-3 top-3.5 text-cyan-500/70 hover:text- transition-colors"
           >
             {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
           </button>
@@ -111,7 +111,7 @@ export default function RegisterForm() {
           Confirm Password
         </label>
         <div className="relative">
-          <Lock className="absolute left-3 top-3 text-primary/50" size={20} />
+          <Lock className="absolute left-3 top-3.5 text-cyan-500/70" size={20} />
           <input
             id="confirmPassword"
             name="confirmPassword"
@@ -119,17 +119,17 @@ export default function RegisterForm() {
             placeholder="Confirm your password"
             value={formData.confirmPassword}
             onChange={handleChange}
-            className="w-full pl-10 pr-10 py-3 bg-input border border-border rounded-lg text-foreground placeholder:text-foreground/40 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/50 transition-colors"
+            className="w-full pl-10 pr-10 py-3 bg-input border border-border rounded-lg text-foreground placeholder:text-foreground/40 focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500/50 transition-colors"
             required
           />
           <button
             type="button"
             onClick={() => setShowConfirmPassword(!showConfirmPassword)}
-            className="absolute right-3 top-3 text-primary/50 hover:text-primary transition-colors"
+            className="absolute right-3 top-3.5 text-cyan-500/70 hover:text-cyan-500 transition-colors"
           >
             {showConfirmPassword ? <EyeOff size={20} /> : <Eye size={20} />}
           </button>
-          {passwordsMatch && <Check className="absolute right-10 top-3 text-primary" size={20} />}
+          {passwordsMatch && <Check className="absolute right-10 top-3.5 text-cyan-500" size={20} />}
         </div>
       </div>
 
@@ -139,16 +139,16 @@ export default function RegisterForm() {
           type="checkbox"
           checked={agreedToTerms}
           onChange={(e) => setAgreedToTerms(e.target.checked)}
-          className="w-4 h-4 rounded border-border bg-input text-primary focus:ring-primary/50 cursor-pointer mt-1"
+          className="w-4 h-4 rounded border-border bg-input text-cyan-500 focus:ring-cyan-500/50 cursor-pointer mt-1"
           required
         />
         <span className="text-sm text-foreground/70">
           I agree to the{" "}
-          <Link href="/terms" className="text-primary hover:text-primary/80 font-semibold">
+          <Link href="/terms" className="text-cyan-500 hover:text-cyan-500/80 font-semibold">
             Terms of Service
           </Link>{" "}
           and{" "}
-          <Link href="/privacy" className="text-primary hover:text-primary/80 font-semibold">
+          <Link href="/privacy" className="text-cyan-500 hover:text-cyan-500/80 font-semibold">
             Privacy Policy
           </Link>
         </span>
@@ -158,7 +158,8 @@ export default function RegisterForm() {
       <button
         type="submit"
         disabled={isLoading || !agreedToTerms}
-        className="w-full py-3 bg-primary text-primary-foreground rounded-lg font-semibold hover:bg-primary/90 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 mt-6"
+        className="w-full py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-cyan-500-foreground rounded-lg font-semibold hover:shadow-2xl hover:shadow-cyan-500/30 
+              transition-all duration-300 disabled:opacity-60 disabled:cursor-not-allowed  mt-6"
       >
         {isLoading ? "Creating account..." : "Create Account"}
       </button>
@@ -166,7 +167,7 @@ export default function RegisterForm() {
       {/* Sign In Link */}
       <p className="text-center text-foreground/70 text-sm">
         Already have an account?{" "}
-        <Link href="/login" className="text-primary hover:text-primary/80 font-semibold transition-colors">
+        <Link href="/login" className="text-cyan-500 hover:text-cyan-500/80 font-semibold transition-colors">
           Sign in
         </Link>
       </p>

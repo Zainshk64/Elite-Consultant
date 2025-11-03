@@ -64,7 +64,7 @@ export default function Services() {
             <span className="text-blue-600 dark:text-blue-400 text-sm font-semibold">OUR SERVICES</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold mb-4 text-balance">Comprehensive Solutions for Your Success</h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg text-gray-400 max-w-2xl mx-auto">
             We offer a complete range of services designed to support your educational and career aspirations.
           </p>
         </motion.div>
@@ -85,11 +85,11 @@ export default function Services() {
                 whileHover={{ y: -10, transition: { duration: 0.3 } }}
                 className="group p-6 bg-card rounded-xl border border-border hover:border-blue-600 transition-all duration-300 cursor-pointer hover:shadow-lg"
               >
-                <div className="w-14 h-14 bg-gradient-to-br from-blue-600 to-green-600 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                <div className="w-14 h-14 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                   <Icon size={28} className="text-white" />
                 </div>
                 <h3 className="text-xl font-bold mb-2">{service.title}</h3>
-                <p className="text-muted-foreground text-sm mb-4">{service.description}</p>
+                <p className="text-gray-400 text-sm mb-4">{service.description}</p>
                 <div className="flex flex-wrap gap-2">
                   {service.features.map((feature, i) => (
                     <span key={i} className="px-3 py-1 bg-muted rounded-full text-xs font-medium">

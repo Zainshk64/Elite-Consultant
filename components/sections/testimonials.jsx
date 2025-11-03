@@ -38,8 +38,8 @@ export default function Testimonials() {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <div className="inline-block px-4 py-2 bg-green-100 dark:bg-green-900/30 rounded-full mb-6">
-            <span className="text-green-600 dark:text-green-400 text-sm font-semibold">TESTIMONIALS</span>
+          <div className="inline-block px-4 py-2 bg-blue-100 dark:bg-blue-900/30 rounded-full mb-6">
+            <span className="text-blue-600 dark:text-blue-400 text-sm font-semibold">TESTIMONIALS</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold mb-4 text-balance">What Our Students Say</h2>
         </motion.div>
@@ -52,17 +52,17 @@ export default function Testimonials() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="p-8 bg-card rounded-xl border border-border hover:border-green-600 hover:shadow-lg transition-all duration-300"
+              className="p-8 bg-card rounded-xl border border-border hover:border-cyan-600 hover:shadow-lg transition-all duration-300"
             >
               {/* Rating */}
               <div className="flex gap-1 mb-4">
                 {[...Array(testimonial.rating)].map((_, i) => (
-                  <Star key={i} size={16} className="fill-yellow-400 text-yellow-400" />
+                  <Star key={i} size={16} className="fill-cyan-400 text-cyan-400" />
                 ))}
               </div>
 
               {/* Text */}
-              <p className="text-muted-foreground mb-6 italic">"{testimonial.text}"</p>
+              <p className="text-gray-400 mb-6 italic">"{testimonial.text}"</p>
 
               {/* Author */}
               <div className="flex items-center gap-4">
@@ -73,7 +73,7 @@ export default function Testimonials() {
                 />
                 <div>
                   <p className="font-bold">{testimonial.name}</p>
-                  <p className="text-sm text-muted-foreground">{testimonial.university}</p>
+                  <p className="text-sm text-gray-400">{testimonial.university}</p>
                 </div>
               </div>
             </motion.div>

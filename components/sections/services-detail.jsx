@@ -62,7 +62,7 @@ export default function ServicesDetail() {
           className="text-center mb-16"
         >
           <h1 className="text-5xl md:text-6xl font-bold mb-4 text-balance">Our Services</h1>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg text-gray-400 max-w-2xl mx-auto">
             Comprehensive solutions designed to support every step of your international education journey
           </p>
         </motion.div>
@@ -81,12 +81,12 @@ export default function ServicesDetail() {
               >
                 <div className={index % 2 === 1 ? "md:order-2" : ""}>
                   <div className="flex gap-4 mb-4">
-                    <div className="w-16 h-16 bg-gradient-to-br from-blue-600 to-green-600 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <div className="w-16 h-16 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-xl flex items-center justify-center flex-shrink-0">
                       <Icon size={32} className="text-white" />
                     </div>
                     <div>
                       <h3 className="text-3xl font-bold">{service.title}</h3>
-                      <p className="text-muted-foreground mt-1">{service.description}</p>
+                      <p className="text-gray-400 mt-1">{service.description}</p>
                     </div>
                   </div>
 

@@ -34,11 +34,11 @@ export default function RegisterForm() {
         className="w-full max-w-md px-6"
       >
         <div className="text-center mb-8">
-          <div className="w-16 h-16 bg-gradient-to-br from-blue-600 to-green-600 rounded-xl flex items-center justify-center mx-auto mb-4">
+          <div className="w-16 h-16 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-xl flex items-center justify-center mx-auto mb-4">
             <span className="text-white font-bold text-2xl">EC</span>
           </div>
           <h1 className="text-3xl font-bold mb-2">Create Account</h1>
-          <p className="text-muted-foreground">Start your journey with Elite Consultant</p>
+          <p className="text-gray-400">Start your journey with Elite Consultant</p>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-4">
@@ -46,7 +46,7 @@ export default function RegisterForm() {
           <div>
             <label className="block text-sm font-medium mb-2">Full Name</label>
             <div className="relative">
-              <User className="absolute left-3 top-3 text-muted-foreground" size={20} />
+              <User className="absolute left-3 top-3 text-gray-400" size={20} />
               <input
                 type="text"
                 name="fullName"
@@ -62,7 +62,7 @@ export default function RegisterForm() {
           <div>
             <label className="block text-sm font-medium mb-2">Email Address</label>
             <div className="relative">
-              <Mail className="absolute left-3 top-3 text-muted-foreground" size={20} />
+              <Mail className="absolute left-3 top-3 text-gray-400" size={20} />
               <input
                 type="email"
                 name="email"
@@ -78,7 +78,7 @@ export default function RegisterForm() {
           <div>
             <label className="block text-sm font-medium mb-2">Phone Number</label>
             <div className="relative">
-              <Phone className="absolute left-3 top-3 text-muted-foreground" size={20} />
+              <Phone className="absolute left-3 top-3 text-gray-400" size={20} />
               <input
                 type="tel"
                 name="phone"
@@ -94,7 +94,7 @@ export default function RegisterForm() {
           <div>
             <label className="block text-sm font-medium mb-2">Password</label>
             <div className="relative">
-              <Lock className="absolute left-3 top-3 text-muted-foreground" size={20} />
+              <Lock className="absolute left-3 top-3 text-gray-400" size={20} />
               <input
                 type={showPassword ? "text" : "password"}
                 name="password"
@@ -106,7 +106,7 @@ export default function RegisterForm() {
               <button
                 type="button"
                 onClick={() => setShowPassword(!showPassword)}
-                className="absolute right-3 top-3 text-muted-foreground hover:text-foreground"
+                className="absolute right-3 top-3 text-gray-400 hover:text-foreground"
               >
                 {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
               </button>
@@ -117,7 +117,7 @@ export default function RegisterForm() {
           <div>
             <label className="block text-sm font-medium mb-2">Confirm Password</label>
             <div className="relative">
-              <Lock className="absolute left-3 top-3 text-muted-foreground" size={20} />
+              <Lock className="absolute left-3 top-3 text-gray-400" size={20} />
               <input
                 type={showPassword ? "text" : "password"}
                 name="confirmPassword"
@@ -132,7 +132,7 @@ export default function RegisterForm() {
           {/* Terms */}
           <label className="flex items-start gap-2 text-sm">
             <input type="checkbox" className="rounded mt-1" />
-            <span className="text-muted-foreground">
+            <span className="text-gray-400">
               I agree to the{" "}
               <Link href="#" className="text-blue-600 hover:underline">
                 Terms of Service
@@ -149,14 +149,14 @@ export default function RegisterForm() {
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
             type="submit"
-            className="w-full py-3 bg-gradient-to-r from-blue-600 to-green-600 text-white rounded-lg font-semibold hover:shadow-lg transition-all mt-6"
+            className="w-full py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-lg font-semibold hover:shadow-lg transition-all mt-6"
           >
             Create Account
           </motion.button>
         </form>
 
         {/* Sign In Link */}
-        <p className="text-center text-muted-foreground mt-6">
+        <p className="text-center text-gray-400 mt-6">
           Already have an account?{" "}
           <Link href="/login" className="text-blue-600 font-semibold hover:underline">
             Sign in

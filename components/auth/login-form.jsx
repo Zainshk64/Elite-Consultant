@@ -28,11 +28,11 @@ export default function LoginForm() {
         className="w-full max-w-md px-6"
       >
         <div className="text-center mb-8">
-          <div className="w-16 h-16 bg-gradient-to-br from-blue-600 to-green-600 rounded-xl flex items-center justify-center mx-auto mb-4">
+          <div className="w-16 h-16 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-xl flex items-center justify-center mx-auto mb-4">
             <span className="text-white font-bold text-2xl">EC</span>
           </div>
           <h1 className="text-3xl font-bold mb-2">Welcome Back</h1>
-          <p className="text-muted-foreground">Sign in to your account to continue</p>
+          <p className="text-gray-400">Sign in to your account to continue</p>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-4">
@@ -40,7 +40,7 @@ export default function LoginForm() {
           <div>
             <label className="block text-sm font-medium mb-2">Email Address</label>
             <div className="relative">
-              <Mail className="absolute left-3 top-3 text-muted-foreground" size={20} />
+              <Mail className="absolute left-3 top-3 text-gray-400" size={20} />
               <input
                 type="email"
                 name="email"
@@ -56,7 +56,7 @@ export default function LoginForm() {
           <div>
             <label className="block text-sm font-medium mb-2">Password</label>
             <div className="relative">
-              <Lock className="absolute left-3 top-3 text-muted-foreground" size={20} />
+              <Lock className="absolute left-3 top-3 text-gray-400" size={20} />
               <input
                 type={showPassword ? "text" : "password"}
                 name="password"
@@ -68,7 +68,7 @@ export default function LoginForm() {
               <button
                 type="button"
                 onClick={() => setShowPassword(!showPassword)}
-                className="absolute right-3 top-3 text-muted-foreground hover:text-foreground"
+                className="absolute right-3 top-3 text-gray-400 hover:text-foreground"
               >
                 {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
               </button>
@@ -91,7 +91,7 @@ export default function LoginForm() {
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
             type="submit"
-            className="w-full py-3 bg-gradient-to-r from-blue-600 to-green-600 text-white rounded-lg font-semibold hover:shadow-lg transition-all mt-6"
+            className="w-full py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-lg font-semibold hover:shadow-lg transition-all mt-6"
           >
             Sign In
           </motion.button>
@@ -100,7 +100,7 @@ export default function LoginForm() {
         {/* Divider */}
         <div className="flex items-center gap-4 my-6">
           <div className="flex-1 h-px bg-border" />
-          <span className="text-sm text-muted-foreground">or</span>
+          <span className="text-sm text-gray-400">or</span>
           <div className="flex-1 h-px bg-border" />
         </div>
 
@@ -112,7 +112,7 @@ export default function LoginForm() {
         </div>
 
         {/* Sign Up Link */}
-        <p className="text-center text-muted-foreground mt-6">
+        <p className="text-center text-gray-400 mt-6">
           Don't have an account?{" "}
           <Link href="/register" className="text-blue-600 font-semibold hover:underline">
             Sign up

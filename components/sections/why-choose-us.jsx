@@ -38,7 +38,7 @@ export default function WhyChooseUs() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4 text-balance">Why Choose Elite Consultant</h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg text-gray-400 max-w-2xl mx-auto">
             We stand out because of our commitment to excellence and student success
           </p>
         </motion.div>
@@ -55,11 +55,11 @@ export default function WhyChooseUs() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="p-6 bg-white dark:bg-slate-800 rounded-xl shadow-lg hover:shadow-xl transition-shadow"
               >
-                <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-green-600 rounded-lg flex items-center justify-center mb-4">
+                <div className="w-12 h-12 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-lg flex items-center justify-center mb-4">
                   <Icon size={24} className="text-white" />
                 </div>
                 <h3 className="text-xl font-bold mb-2">{reason.title}</h3>
-                <p className="text-muted-foreground text-sm">{reason.description}</p>
+                <p className="text-gray-400 text-sm">{reason.description}</p>
               </motion.div>
             )
           })}
