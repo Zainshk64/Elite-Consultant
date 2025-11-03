@@ -85,48 +85,48 @@ export default function Services() {
       color: "from-orange-400 to-orange-600",
       stats: "20+ Countries Covered",
     },
-    {
-      icon: FileText,
-      title: "Documentation Support",
-      description:
-        "Professional assistance with all required documents, translations, and certifications.",
-      features: [
-        "Document Checklist",
-        "Translation Services",
-        "Notarization Help",
-        "Digital Copies",
-      ],
-      color: "from-orange-500 to-orange-700",
-      stats: "100% Document Accuracy",
-    },
-    {
-      icon: Users,
-      title: "Pre-Departure Briefing",
-      description:
-        "Comprehensive orientation to prepare you for life abroad, from culture to accommodation.",
-      features: [
-        "Cultural Training",
-        "Accommodation Help",
-        "Banking Guidance",
-        "Travel Planning",
-      ],
-      color: "from-orange-500 to-orange-600",
-      stats: "4.9/5 Student Rating",
-    },
-    {
-      icon: TrendingUp,
-      title: "Post-Landing Support",
-      description:
-        "Continuous support even after you land with job search assistance and networking.",
-      features: [
-        "Job Search Help",
-        "Network Events",
-        "Part-time Jobs",
-        "Permanent Residency",
-      ],
-      color: "from-orange-400 to-orange-600",
-      stats: "24/7 Support Available",
-    },
+    // {
+    //   icon: FileText,
+    //   title: "Documentation Support",
+    //   description:
+    //     "Professional assistance with all required documents, translations, and certifications.",
+    //   features: [
+    //     "Document Checklist",
+    //     "Translation Services",
+    //     "Notarization Help",
+    //     "Digital Copies",
+    //   ],
+    //   color: "from-orange-500 to-orange-700",
+    //   stats: "100% Document Accuracy",
+    // },
+    // {
+    //   icon: Users,
+    //   title: "Pre-Departure Briefing",
+    //   description:
+    //     "Comprehensive orientation to prepare you for life abroad, from culture to accommodation.",
+    //   features: [
+    //     "Cultural Training",
+    //     "Accommodation Help",
+    //     "Banking Guidance",
+    //     "Travel Planning",
+    //   ],
+    //   color: "from-orange-500 to-orange-600",
+    //   stats: "4.9/5 Student Rating",
+    // },
+    // {
+    //   icon: TrendingUp,
+    //   title: "Post-Landing Support",
+    //   description:
+    //     "Continuous support even after you land with job search assistance and networking.",
+    //   features: [
+    //     "Job Search Help",
+    //     "Network Events",
+    //     "Part-time Jobs",
+    //     "Permanent Residency",
+    //   ],
+    //   color: "from-orange-400 to-orange-600",
+    //   stats: "24/7 Support Available",
+    // },
   ];
 
   const containerVariants = {

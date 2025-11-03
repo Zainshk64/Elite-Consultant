@@ -49,11 +49,19 @@ export default function Hero() {
     <section className="relative min-h-screen flex items-center md:px-14 py-34 overflow-hidden">
       {/* Background Image */}
       <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        className="absolute md:hidden inset-0 bg-cover bg-center bg-no-repeat"
         style={{
           backgroundImage:
-          "url('/hero.png')",
-            // "url('https://images.pexels.com/photos/32037884/pexels-photo-32037884.jpeg')", // Plane + scenery
+            "url('https://images.pexels.com/photos/3230122/pexels-photo-3230122.jpeg')", // 🗽 Statue of Liberty with sky background
+
+          transform: `translateY(${scrollY * 0.5}px)`,
+        }}
+      />
+      <div
+        className="absolute hidden md:flex inset-0 bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: "url('/hero.png')",
+          // "url('https://images.pexels.com/photos/32037884/pexels-photo-32037884.jpeg')", // Plane + scenery
           // "url('https://images.unsplash.com/photo-1584084807193-bed442df7a75?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8YnJpdGlzaCUyMGFpcndheXN8ZW58MHx8MHx8fDA%3D&fm=jpg&q=60&w=3000')",
           transform: `translateY(${scrollY * 0.5}px)`,
         }}
@@ -96,7 +104,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.8 }}
-            className="text-5xl sm:text-6xl md:text-7xl font-bold leading-tight mb-6"
+            className="text-4xl sm:text-6xl md:text-7xl font-bold leading-tight mb-6"
           >
             <span className="bg-gradient-to-r from-white via-orange-100 to-white bg-clip-text text-transparent">
               Your Gateway to
@@ -112,7 +120,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.8 }}
-            className="text-xl text-gray-200 mb-10 max-w-2xl mx- leading-relaxed"
+            className="text-md md:text-xl text-gray-200 mb-10 max-w-2xl mx- leading-relaxed"
           >
             We guide students and professionals through their international
             education and career journey with expertise, dedication, and proven
@@ -124,7 +132,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 0.8 }}
-            className="flex flex-col sm:flex-row gap-4 justify- items-center"
+            className="flex flex-col sm:flex-row gap-4 items-center"
           >
             <motion.a
               href="/appointment"
