@@ -2,6 +2,7 @@
 
 import { motion, useInView } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import Link from "next/link";
 import { useEffect, useState, useRef } from "react";
 
 const CountUp = ({ end, duration = 2, suffix = "" }) => {
@@ -78,8 +79,6 @@ export default function Hero() {
 
       <div className="absolute inset-0 bg-gradient-to-r from-[#000000cc] via-[#000000aa]/70 to-[#00000088]/30" />
 
-
-
       {/* Orange + yellow glows */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-orange-400/20 rounded-full blur-3xl animate-pulse" />
@@ -104,7 +103,7 @@ export default function Hero() {
             backdrop-blur-xl shadow-lg shadow-orange-300/10"
         >
           <span className="text-[#EE7A36] text-sm font-semibold tracking-wider">
-            WELCOME TO HnH CONSULTANT
+            WELCOME TO H&H CONSULTANT
           </span>
         </motion.div>
 
@@ -141,31 +140,33 @@ export default function Hero() {
           transition={{ delay: 0.6, duration: 0.8 }}
           className="flex flex-col sm:flex-row gap-4 items-center"
         >
-          <motion.a
-            href="/appointment"
-            className="group px-8 py-4 bg-[#EE7A36] text-white rounded-xl font-semibold 
+          <Link href={"/appointment"}>
+            <motion.div
+              className="group px-8 py-4 bg-[#EE7A36] text-white rounded-xl font-semibold 
               hover:shadow-2xl hover:shadow-[#EE7A36]/40 transition-all duration-300 
               flex items-center gap-2 border border-orange-400/20"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            Book Consultation
-            <ArrowRight
-              className="group-hover:translate-x-1 transition-transform"
-              size={20}
-            />
-          </motion.a>
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              Book Consultation
+              <ArrowRight
+                className="group-hover:translate-x-1 transition-transform"
+                size={20}
+              />
+            </motion.div>
+          </Link>
 
-          <motion.a
-            href="/services"
-            className="px-8 py-4 border-2 border-[#EE7A36]/50 text-orange-300 
-              rounded-xl font-semibold hover:bg-[#EE7A36]/10 hover:border-[#EE7A36] 
+          <Link href={"/services"}>
+            <motion.div
+              className="px-8 py-4 border-2 border-[#EE7A36]/50 text-orange-300 
+              rounded-xl cursor-pointer font-semibold hover:bg-[#EE7A36]/10 hover:border-[#EE7A36] 
               transition-all duration-300 backdrop-blur-sm"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            Explore Services
-          </motion.a>
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              Explore Services
+            </motion.div>
+          </Link>
         </motion.div>
 
         {/* Counters */}
@@ -201,7 +202,8 @@ export default function Hero() {
                 </div>
               </div>
 
-              <div className="absolute inset-0 bg-gradient-to-r from-orange-500/0 via-orange-500/10 to-yellow-400/0 
+              <div
+                className="absolute inset-0 bg-gradient-to-r from-orange-500/0 via-orange-500/10 to-yellow-400/0 
                 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10 blur-xl"
               />
             </motion.div>

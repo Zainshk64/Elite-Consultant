@@ -15,7 +15,7 @@ export default function Footer() {
               <div className="w-10 h-10 bg-gradient-to-br from-[#EE7A36] to-orange-400 rounded-lg flex items-center justify-center">
                   <Sparkles className="text-white" size={24} />
               </div>
-              <span className="font-bold text-lg">HnH Consultant</span>
+              <span className="font-bold text-lg">H&H Consultant</span>
             </div>
             <p className="text-gray-400 text-sm">
               Your trusted partner in global education and career advancement.
@@ -98,7 +98,7 @@ export default function Footer() {
               </li>
               <li className="flex items-start gap-2">
                 <Mail size={18} className="text-[#EE7A36] mt-1 flex-shrink-0" />
-                <span className="text-gray-400">info@HnHconsultant.com</span>
+                <span className="text-gray-400">info@H&Hconsultant.com</span>
               </li>
               <li className="flex items-start gap-2">
                 <MapPin size={18} className="text-[#EE7A36] mt-1 flex-shrink-0" />
@@ -110,7 +110,7 @@ export default function Footer() {
 
         {/* Social Links */}
         <div className="border-t border-gray-300 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-gray-400 text-sm">&copy; 2025 HnH Consultant. All rights reserved.</p>
+          <p className="text-gray-400 text-sm">&copy; 2025 H&H Consultant. All rights reserved.</p>
           <div className="flex gap-4">
             {[Facebook, Instagram, Linkedin].map((Icon, i) => (
               <motion.a

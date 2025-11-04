@@ -44,14 +44,14 @@ export default function RegisterPage() {
 
   return (
     <div className="min-h-screen bg-white flex items-center justify-center p-4 relative overflow-hidden">
-      <div className="absolute top-20 left-10 w-72 h-72 bg-orange-500/10 rounded-full blur-3xl animate-pulse" />
-      <div className="absolute bottom-20 right-10 w-96 h-96 bg-orange-400/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
+      <div className="absolute top-20 left-10 w-72 h-72 bg-orange-600/20 rounded-full blur-2xl animate-pulse" />
+      <div className="absolute bottom-20 right-10 w-96 h-96 bg-orange-400/20 rounded-full blur-2xl animate-pulse" style={{ animationDelay: '1s' }} />
 
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="w-full max-w-6xl bg-white shadow-2xl rounded-3xl border border-gray-200 overflow-hidden relative z-10"
+        className="w-full max-w-6xl bg-white shadow-md  rounded-3xl border border-gray-200 overflow-hidden relative z-10"
       >
         <div className="grid lg:grid-cols-2 gap-0">
           <div className="relative hidden lg:block bg-gradient-to-br from-orange-50 via-orange-100 to-orange-200 p-12">
@@ -71,7 +71,7 @@ export default function RegisterPage() {
                     <Sparkles className="text-white" size={24} />
                   </div>
                   <div>
-                    <h3 className="text-2xl font-bold text-gray-800">Elite Consultant</h3>
+                    <h3 className="text-2xl font-bold text-gray-800">H&H Consultant</h3>
                     <p className="text-[#EE7A36] text-sm font-semibold">Your Success Partner</p>
                   </div>
                 </motion.div>
@@ -146,7 +146,7 @@ export default function RegisterPage() {
                 <span className="text-[#EE7A36] text-sm font-semibold">GET STARTED</span>
               </div>
               <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-2">Create Account</h2>
-              <p className="text-gray-600">Join Elite Consultant and unlock your potential</p>
+              <p className="text-gray-600">Join H&H Consultant and unlock your potential</p>
             </motion.div>
 
             <div className="space-y-5">

@@ -9,7 +9,7 @@ export default function Testimonials() {
       name: "Ahmed Khan",
       university: "Harvard University",
       image: "/student-testimonial.png",
-      text: "HnH Consultant transformed my dream into reality. Their guidance was invaluable throughout the entire process.",
+      text: "H&H Consultant transformed my dream into reality. Their guidance was invaluable throughout the entire process.",
       rating: 5,
     },
     {
@@ -48,7 +48,7 @@ export default function Testimonials() {
             What Our Students Say
           </h2>
           <p className="text-gray-500 max-w-2xl mx-auto">
-            Hear from students who achieved their dreams with HnH Consultant’s expert guidance.
+            Hear from students who achieved their dreams with H&H Consultant’s expert guidance.
           </p>
         </motion.div>
 

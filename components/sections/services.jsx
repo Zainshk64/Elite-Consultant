@@ -312,7 +312,7 @@ export default function Services() {
         </motion.div>
         {/* Button */}
         <div className="mt-16 text-center">
-          <motion.a
+          <motion.Link
             href="/services"
             className="inline-flex items-center gap-3 px-8 py-4 bg-[#EE7A36] text-white rounded-xl font-semibold hover:bg-orange-600 hover:shadow-lg transition-all duration-300"
             whileHover={{ scale: 1.05 }}
@@ -323,7 +323,7 @@ export default function Services() {
               className="group-hover:translate-x-1 transition-transform"
               size={20}
             />
-          </motion.a>
+          </motion.Link>
         </div>
       </div>
     </section>

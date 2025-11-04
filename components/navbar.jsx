@@ -1,14 +1,14 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import { Menu, X, ArrowUp, Sparkles } from "lucide-react"
-import { motion, AnimatePresence } from "framer-motion"
-import { Link } from 'next/link';
+import { useState, useEffect } from "react";
+import { Menu, X, ArrowUp, Sparkles } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
 
 export default function Navbar() {
-  const [isOpen, setIsOpen] = useState(false)
-  const [scrolled, setScrolled] = useState(false)
-  const [showBackToTop, setShowBackToTop] = useState(false)
+  const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const [showBackToTop, setShowBackToTop] = useState(false);
 
   const navItems = [
     { label: "Home", href: "/" },
@@ -16,27 +16,27 @@ export default function Navbar() {
     { label: "About", href: "/about" },
     { label: "Appointment", href: "/appointment" },
     { label: "Contact", href: "/contact" },
-  ]
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 50)
-      setShowBackToTop(window.scrollY > 400)
-    }
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+      setScrolled(window.scrollY > 50);
+      setShowBackToTop(window.scrollY > 400);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" })
-  }
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
   return (
     <>
       <motion.div
         className="fixed top-0 left-0 right-0 z-50 flex justify-center px-4 pt-6"
-        initial={{  opacity: 0 }}
-        animate={{  opacity: 1 }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
         transition={{ duration: 0.8, ease: "fadeIn" }}
       >
         <motion.nav
@@ -49,31 +49,35 @@ export default function Navbar() {
           transition={{ duration: 0.3 }}
         >
           <div className="absolute inset-0 bg-gradient-to-r from-orange-100/20 via-orange-50/20 to-white/10 rounded-2xl" />
-          
+
           <div className="relative px-6 lg:px-8">
             <div className="flex justify-between items-center h-20">
               {/* Logo */}
-              <a href="/" className="flex items-center gap-3 group relative z-10">
-                <motion.div
-                  className="relative w-12 h-12 bg-gradient-to-br from-[#EE7A36] to-orange-400 rounded-2xl flex items-center justify-center overflow-hidden"
-                  whileHover={{ rotate: 360, scale: 1.1 }}
-                  transition={{ duration: 0.6 }}
-                >
-                  <div className="absolute inset-0 bg-gradient-to-br from-orange-200/30 to-orange-600/30 animate-pulse" />
-                  <Sparkles className="text-white" size={24} />
-                </motion.div>
-                <div className="hidden lg:block">
-                  <span className="block font-bold text-lg text-transparent bg-clip-text bg-gradient-to-r from-[#EE7A36] to-orange-700 transition-all duration-500">
-                    HnH Consultant
-                  </span>
-                  <span className="block text-xs text-gray-500 -mt-1">Your Success Partner</span>
-                </div>
-              </a>
+              {/* <Link href={"/"}> */}
+                <Link href="/" className="flex items-center gap-3 group relative z-10">
+                  <motion.div
+                    className="relative w-12 h-12 bg-gradient-to-br from-[#EE7A36] to-orange-400 rounded-2xl flex items-center justify-center overflow-hidden"
+                    whileHover={{ rotate: 360, scale: 1.1 }}
+                    transition={{ duration: 0.6 }}
+                  >
+                    <div className="absolute inset-0 bg-gradient-to-br from-orange-200/30 to-orange-600/30 animate-pulse" />
+                    <Sparkles className="text-white" size={24} />
+                  </motion.div>
+                  <div className="hidden lg:block">
+                    <span className="block font-bold text-lg text-transparent bg-clip-text bg-gradient-to-r from-[#EE7A36] to-orange-700 transition-all duration-500">
+                      H&H Consultant
+                    </span>
+                    <span className="block text-xs text-gray-500 -mt-1">
+                      Your Success Partner
+                    </span>
+                  </div>
+                </Link>
+              {/* </Link> */}
 
               {/* Nav Items */}
               <div className="hidden md:flex items-center gap-2 rounded-xl px-3 py-2  ">
                 {navItems.map((item, index) => (
-                  <a key={item.href} href={item.href}>
+                  <Link key={item.href} href={item.href}>
                     <motion.div
                       className="relative px-5 py-2.5 group cursor-pointer"
                       initial={{ opacity: 0, y: -10 }}
@@ -93,13 +97,13 @@ export default function Navbar() {
                         transition={{ duration: 0.3 }}
                       />
                     </motion.div>
-                  </a>
+                  </Link>
                 ))}
               </div>
 
               {/* Buttons */}
               <div className="flex items-center gap-3">
-                <a href="/register" className="hidden sm:block">
+                <Link href="/register" className="hidden sm:block">
                   <motion.button
                     className="relative px-6 py-3 cursor-pointer bg-gradient-to-r from-[#EE7A36] to-orange-400 text-white text-md font-semibold rounded-xl overflow-hidden group"
                     whileHover={{ scale: 1.05 }}
@@ -107,12 +111,11 @@ export default function Navbar() {
                   >
                     <span className="relative z-10 flex items-center gap-2">
                       Register Now
-                     
                     </span>
                     <div className="absolute inset-0 bg-gradient-to-r from-[#EE7A36] to-orange-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     <div className="absolute -inset-1 bg-gradient-to-r from-orange-400 to-orange-600 rounded-xl  opacity-30 group-hover:opacity-50 transition-opacity duration-300" />
                   </motion.button>
-                </a>
+                </Link>
 
                 <motion.button
                   onClick={() => setIsOpen(!isOpen)}
@@ -154,7 +157,9 @@ export default function Navbar() {
                     <div className="w-10 h-10 bg-gradient-to-br from-orange-400 to-orange-600 rounded-xl flex items-center justify-center">
                       <Sparkles className="text-white" size={20} />
                     </div>
-                    <span className="font-bold text-lg text-gray-800">Menu</span>
+                    <span className="font-bold text-lg text-gray-800">
+                      Menu
+                    </span>
                   </div>
                   <button
                     onClick={() => setIsOpen(false)}
@@ -166,7 +171,7 @@ export default function Navbar() {
 
                 <div className="space-y-2">
                   {navItems.map((item, index) => (
-                    <motion.a
+                    <motion.Link
                       key={item.href}
                       href={item.href}
                       initial={{ opacity: 0, x: 50 }}
@@ -179,7 +184,7 @@ export default function Navbar() {
                       <span className="text-gray-700 group-hover:text-orange-600 font-medium transition-colors">
                         {item.label}
                       </span>
-                    </motion.a>
+                    </motion.Link>
                   ))}
                 </div>
 
@@ -192,7 +197,6 @@ export default function Navbar() {
                   className="mt-8 flex items-center justify-center gap-2 w-full px-6 py-4 bg-gradient-to-r from-orange-500 to-orange-600 text-white rounded-xl font-semibold hover:shadow-2xl hover:shadow-orange-400/30 transition-all"
                 >
                   Register Now
-                
                 </motion.Link>
               </div>
             </motion.div>
@@ -214,11 +218,14 @@ export default function Navbar() {
             transition={{ type: "spring", stiffness: 260, damping: 20 }}
             aria-label="Back to top"
           >
-            <ArrowUp className="group-hover:-translate-y-1 transition-transform" size={24} />
+            <ArrowUp
+              className="group-hover:-translate-y-1 transition-transform"
+              size={24}
+            />
             <div className="absolute -inset-1 bg-gradient-to-r from-[#EE7A36] to-orange-400 rounded blur opacity-40 group-hover:opacity-60 transition-opacity" />
           </motion.button>
         )}
       </AnimatePresence>
     </>
-  )
+  );
 }

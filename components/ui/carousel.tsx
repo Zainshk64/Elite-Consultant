@@ -153,7 +153,7 @@ function CarouselContent({ className, ...props }: React.ComponentProps<'div'>) {
   )
 }
 
-function CarousHnHm({ className, ...props }: React.ComponentProps<'div'>) {
+function CarousH&Hm({ className, ...props }: React.ComponentProps<'div'>) {
   const { orientation } = useCarousel()
 
   return (
@@ -235,7 +235,7 @@ export {
   type CarouselApi,
   Carousel,
   CarouselContent,
-  CarousHnHm,
+  CarousH&Hm,
   CarouselPrevious,
   CarouselNext,
 }

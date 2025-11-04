@@ -46,8 +46,8 @@ export default function ContactPage() {
     {
       icon: Mail,
       label: "Email",
-      value: "info@HnHconsultant.com",
-      link: "mailto:info@HnHconsultant.com",
+      value: "info@H&Hconsultant.com",
+      link: "mailto:info@H&Hconsultant.com",
     },
     {
       icon: MapPin,

@@ -38,7 +38,7 @@ export default function RegisterForm() {
             <span className="text-white font-bold text-2xl">EC</span>
           </div>
           <h1 className="text-3xl font-bold mb-2">Create Account</h1>
-          <p className="text-gray-400">Start your journey with HnH Consultant</p>
+          <p className="text-gray-400">Start your journey with H&H Consultant</p>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-4">

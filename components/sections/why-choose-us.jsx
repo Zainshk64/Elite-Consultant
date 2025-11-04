@@ -38,7 +38,7 @@ export default function WhyChooseUs() {
       className="text-center mb-16"
     >
       <h2 className="text-4xl md:text-5xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-[#EE7A36] to-yellow-500">
-        Why Choose HnH Consultant
+        Why Choose H&H Consultant
       </h2>
       <p className="text-lg text-gray-500 max-w-2xl mx-auto">
         We stand out because of our commitment to excellence and student success
