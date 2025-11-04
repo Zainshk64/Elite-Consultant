@@ -36,7 +36,7 @@ export default function AppointmentBooking() {
 
   if (booked) {
     return (
-      <section className="min-h-screen flex items-center justify-center py-24 bg-gradient-to-br from-background to-green-50 dark:to-slate-900">
+      <section className="min-h-screen flex items-center justify-center py-24">
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -44,8 +44,8 @@ export default function AppointmentBooking() {
         >
           <motion.div
             animate={{ scale: [1, 1.1, 1] }}
-            transition={{ duration: 1, repeat: Number.POSITIVE_INFINITY, delay: 0.5 }}
-            className="w-20 h-20 bg-gradient-to-br from-green-600 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-6"
+            transition={{ duration: 3, repeat: Number.POSITIVE_INFINITY, delay: 2 }}
+            className="w-20 h-20 bg-gradient-to-br from-[#EE7A36] to-orange-400 rounded-full flex items-center justify-center mx-auto mb-6"
           >
             <CheckCircle size={40} className="text-white" />
           </motion.div>
@@ -53,7 +53,7 @@ export default function AppointmentBooking() {
           <p className="text-gray-400 mb-6">
             Thank you for scheduling a consultation. We'll contact you shortly to confirm your appointment details.
           </p>
-          <div className="bg-card rounded-lg p-6 mb-6 border border-border">
+          <div className="bg-card rounded-lg p-6 mb-6 border border-orange-300">
             <p className="text-sm text-gray-400 mb-2">Service:</p>
             <p className="font-semibold mb-4">{services.find((s) => s.id === formData.serviceType)?.name}</p>
             <p className="text-sm text-gray-400 mb-2">Email:</p>
@@ -61,7 +61,7 @@ export default function AppointmentBooking() {
           </div>
           <button
             onClick={() => (window.location.href = "/")}
-            className="w-full py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-lg font-semibold"
+            className="w-full py-3 bg-gradient-to-r from-[#EE7A36] to-orange-400  text-white rounded-lg font-semibold"
           >
             Return Home
           </button>
@@ -71,7 +71,7 @@ export default function AppointmentBooking() {
   }
 
   return (
-    <section className="min-h-screen flex items-center justify-center py-28 bg-gradient-to-br from-background to-blue-50 dark:to-slate-900 pb-12">
+    <section className="min-h-screen flex items-center justify-center py-42 pb-12">
       <div className="w-full max-w-2xl px-6">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
           <div className="text-center mb-12">
@@ -86,7 +86,7 @@ export default function AppointmentBooking() {
                 <motion.div
                   className={`w-12 h-12 rounded-full flex items-center justify-center font-bold mb-2 transition-all ${
                     s <= step
-                      ? "bg-gradient-to-r from-cyan-500 to-blue-600 text-white"
+                      ? "bg-gradient-to-r from-[#EE7A36] to-orange-400  text-white"
                       : "bg-muted text-gray-400"
                   }`}
                 >
@@ -95,7 +95,7 @@ export default function AppointmentBooking() {
                 <span className="text-sm text-gray-400">
                   {s === 1 ? "Service" : s === 2 ? "Details" : "Confirm"}
                 </span>
-                {s < 3 && <div className={`w-full h-1 mt-4 ${s < step ? "bg-green-600" : "bg-muted"}`} />}
+                {s < 3 && <div className={`w-full h-1.5 mt-4 ${s < step ? "bg-orange-400" : "bg-muted"}`} />}
               </div>
             ))}
           </div>
@@ -112,8 +112,8 @@ export default function AppointmentBooking() {
                       whileHover={{ scale: 1.02 }}
                       className={`p-6 rounded-xl border-2 cursor-pointer transition-all ${
                         formData.serviceType === service.id
-                          ? "border-blue-600 bg-blue-50 dark:bg-blue-900/20"
-                          : "border-border hover:border-blue-300"
+                          ? "border-orange-600 bg-orange-50"
+                          : "border-border hover:border-orange-300"
                       }`}
                     >
                       <input
@@ -146,7 +146,7 @@ export default function AppointmentBooking() {
                       value={formData.date}
                       onChange={handleChange}
                       required
-                      className="w-full pl-10 pr-4 py-3 bg-card border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
+                      className="w-full pl-10 pr-4 py-3 bg-card border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400"
                     />
                   </div>
                 </div>
@@ -161,7 +161,7 @@ export default function AppointmentBooking() {
                       value={formData.time}
                       onChange={handleChange}
                       required
-                      className="w-full pl-10 pr-4 py-3 bg-card border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
+                      className="w-full pl-10 pr-4 py-3 bg-card border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400"
                     />
                   </div>
                 </div>
@@ -184,7 +184,7 @@ export default function AppointmentBooking() {
                       onChange={handleChange}
                       placeholder="John Doe"
                       required
-                      className="w-full pl-10 pr-4 py-3 bg-card border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
+                      className="w-full pl-10 pr-4 py-3 bg-card border rounded-lg focus:ring-2 focus:outline-none focus:ring-orange-400"
                     />
                   </div>
                 </div>
@@ -200,7 +200,7 @@ export default function AppointmentBooking() {
                       onChange={handleChange}
                       placeholder="your@email.com"
                       required
-                      className="w-full pl-10 pr-4 py-3 bg-card border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
+                      className="w-full pl-10 pr-4 py-3 bg-card border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400"
                     />
                   </div>
                 </div>
@@ -216,7 +216,7 @@ export default function AppointmentBooking() {
                       onChange={handleChange}
                       placeholder="+92 (123) 456-7890"
                       required
-                      className="w-full pl-10 pr-4 py-3 bg-card border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
+                      className="w-full pl-10 pr-4 py-3 bg-card border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400"
                     />
                   </div>
                 </div>
@@ -231,7 +231,7 @@ export default function AppointmentBooking() {
                       onChange={handleChange}
                       placeholder="Tell us about your goals..."
                       rows="4"
-                      className="w-full pl-10 pr-4 py-3 bg-card border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 resize-none"
+                      className="w-full pl-10 pr-4 py-3 bg-card border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400 resize-none"
                     />
                   </div>
                 </div>
@@ -262,7 +262,7 @@ export default function AppointmentBooking() {
                     if (step === 2 && (!formData.date || !formData.time)) return
                     setStep(step + 1)
                   }}
-                  className="flex-1 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-lg font-semibold hover:shadow-lg transition-all"
+                  className="flex-1 py-3 bg-gradient-to-r from-[#EE7A36] to-orange-400  text-white rounded-lg font-semibold hover:shadow-lg transition-all"
                 >
                   Next
                 </motion.button>
@@ -271,7 +271,7 @@ export default function AppointmentBooking() {
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                   type="submit"
-                  className="flex-1 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-lg font-semibold hover:shadow-lg transition-all"
+                  className="flex-1 py-3 bg-gradient-to-r from-[#EE7A36] to-orange-400  text-white rounded-lg font-semibold hover:shadow-lg transition-all"
                 >
                   Confirm Booking
                 </motion.button>

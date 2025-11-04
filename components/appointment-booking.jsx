@@ -64,7 +64,7 @@ export default function AppointmentBooking() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-background via-background to-muted py-12 px-4">
+    <div className="min-h-screen bg-gradient-to-br from-[#EE7A36] to-orange-400 py-14 px-4">
       <div className="max-w-2xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">

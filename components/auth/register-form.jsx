@@ -34,7 +34,7 @@ export default function RegisterForm() {
         className="w-full max-w-md px-6"
       >
         <div className="text-center mb-8">
-          <div className="w-16 h-16 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-xl flex items-center justify-center mx-auto mb-4">
+          <div className="w-16 h-16 bg-gradient-to-br from-[#EE7A36] to-orange-400  rounded-xl flex items-center justify-center mx-auto mb-4">
             <span className="text-white font-bold text-2xl">EC</span>
           </div>
           <h1 className="text-3xl font-bold mb-2">Create Account</h1>
@@ -149,7 +149,7 @@ export default function RegisterForm() {
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
             type="submit"
-            className="w-full py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-lg font-semibold hover:shadow-lg transition-all mt-6"
+            className="w-full py-3 bg-gradient-to-r from-[#EE7A36] to-orange-400  text-white rounded-lg font-semibold hover:shadow-lg transition-all mt-6"
           >
             Create Account
           </motion.button>

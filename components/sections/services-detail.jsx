@@ -52,7 +52,7 @@ export default function ServicesDetail() {
   ]
 
   return (
-    <section className="pt-32 pb-16 bg-background transition-colors duration-300">
+    <section className="py-42 pb-16 bg-background transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
@@ -81,7 +81,7 @@ export default function ServicesDetail() {
               >
                 <div className={index % 2 === 1 ? "md:order-2" : ""}>
                   <div className="flex gap-4 mb-4">
-                    <div className="w-16 h-16 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <div className="w-16 h-16 bg-gradient-to-br from-[#EE7A36] to-orange-400  rounded-xl flex items-center justify-center flex-shrink-0">
                       <Icon size={32} className="text-white" />
                     </div>
                     <div>

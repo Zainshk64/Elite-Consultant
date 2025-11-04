@@ -1,4 +1,4 @@
-"use client"
+  "use client"
 
 import { motion } from "framer-motion"
 import { Users, Award, Globe, Heart } from "lucide-react"
@@ -12,7 +12,7 @@ export default function About() {
   ]
 
   return (
-    <section className="pt-32 pb-16 bg-background transition-colors duration-300">
+    <section className="py-42 pb-16 bg-background transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
@@ -69,9 +69,9 @@ export default function About() {
                 <motion.div
                   key={i}
                   whileHover={{ y: -10 }}
-                  className="p-6 bg-card rounded-xl border border-border text-center"
+                  className="p-6 bg-card rounded-xl border border-orange-300/40 text-center"
                 >
-                  <div className="w-16 h-16 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-xl flex items-center justify-center mx-auto mb-4">
+                  <div className="w-16 h-16 bg-gradient-to-br from-[#EE7A36] to-orange-400  rounded-xl flex items-center justify-center mx-auto mb-4">
                     <Icon size={32} className="text-white" />
                   </div>
                   <h3 className="font-bold text-lg mb-2">{value.title}</h3>
@@ -83,7 +83,7 @@ export default function About() {
         </motion.div>
 
         {/* Stats */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-xl p-12 text-white">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 bg-gradient-to-r from-[#EE7A36] to-orange-300  rounded-xl p-12 text-white">
           {[
             { number: "10+", label: "Years Experience" },
             { number: "5000+", label: "Students Guided" },

@@ -6,7 +6,7 @@ import { motion } from "framer-motion"
 
 export default function Footer() {
   return (
-    <footer className="bg-card border-t border-border transition-colors duration-300" id="contact">
+    <footer className="bg-card border-border transition-colors duration-300" id="contact">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           {/* Brand */}
@@ -109,7 +109,7 @@ export default function Footer() {
         </div>
 
         {/* Social Links */}
-        <div className="border-t border-border pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+        <div className="border-t border-gray-300 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-gray-400 text-sm">&copy; 2025 HnH Consultant. All rights reserved.</p>
           <div className="flex gap-4">
             {[Facebook, Instagram, Linkedin].map((Icon, i) => (

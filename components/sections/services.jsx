@@ -13,6 +13,7 @@ import {
   CheckCircle,
   ArrowRight,
 } from "lucide-react";
+import Link from "next/link";
 import { useRef } from "react";
 
 export default function Services() {
@@ -57,34 +58,34 @@ export default function Services() {
       color: "from-orange-400 to-orange-600",
       stats: "3000+ Careers Shaped",
     },
-    {
-      icon: Award,
-      title: "University Placement",
-      description:
-        "Get admitted to your dream university with our extensive network and scholarship support.",
-      features: [
-        "Top 100 Universities",
-        "Scholarship Guidance",
-        "SOP/LOR Writing",
-        "Application Review",
-      ],
-      color: "from-orange-400 to-orange-500",
-      stats: "500+ Partner Universities",
-    },
-    {
-      icon: Globe,
-      title: "Country Selection",
-      description:
-        "Expert advice on choosing the right country based on your goals, budget, and preferences.",
-      features: [
-        "Comparative Analysis",
-        "Cost Estimation",
-        "Job Market Insights",
-        "Immigration Pathways",
-      ],
-      color: "from-orange-400 to-orange-600",
-      stats: "20+ Countries Covered",
-    },
+    // {
+    //   icon: Award,
+    //   title: "University Placement",
+    //   description:
+    //     "Get admitted to your dream university with our extensive network and scholarship support.",
+    //   features: [
+    //     "Top 100 Universities",
+    //     "Scholarship Guidance",
+    //     "SOP/LOR Writing",
+    //     "Application Review",
+    //   ],
+    //   color: "from-orange-400 to-orange-500",
+    //   stats: "500+ Partner Universities",
+    // },
+    // {
+    //   icon: Globe,
+    //   title: "Country Selection",
+    //   description:
+    //     "Expert advice on choosing the right country based on your goals, budget, and preferences.",
+    //   features: [
+    //     "Comparative Analysis",
+    //     "Cost Estimation",
+    //     "Job Market Insights",
+    //     "Immigration Pathways",
+    //   ],
+    //   color: "from-orange-400 to-orange-600",
+    //   stats: "20+ Countries Covered",
+    // },
     // {
     //   icon: FileText,
     //   title: "Documentation Support",
@@ -180,13 +181,78 @@ export default function Services() {
             support for your international education journey.
           </p>
         </motion.div>
+        <section className="relative py-24 overflow-hidden">
+          {/* 🎥 Background Video (for desktop) */}
+          <video
+            className="absolute inset-0 w-full h-full object-cover hidden md:block"
+            src="/heroVideo2.mp4" // Your video path in /public folder
+            autoPlay
+            loop
+            muted
+            playsInline
+          />
 
+          {/* 📱 Static Background (for mobile) */}
+          <div
+            className="absolute md:hidden inset-0 bg-cover bg-center"
+            style={{
+              backgroundImage:
+                "url('https://images.pexels.com/photos/3230122/pexels-photo-3230122.jpeg')",
+            }}
+          />
+
+          {/* 🖤 Dark Overlay */}
+          <div className="absolute inset-0 bg-black/50"></div>
+
+          {/* 🌅 Optional Warm Gradient Glow */}
+          <div className="absolute inset-0 bg-gradient-to-t from-[#EE7A36]/40 via-transparent to-[#EE7A36]/20"></div>
+
+          {/* ✨ Content */}
+          <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+            >
+              <h2 className="text-4xl md:text-5xl font-bold mb-4 text-balance">
+                Ready to Transform Your Future?
+              </h2>
+              <p className="text-lg text-white/90 mb-8 max-w-2xl mx-auto">
+                Schedule a free consultation with our experts today and take the
+                first step toward your international education journey.
+              </p>
+
+              <Link
+                href="/appointment"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-white text-[#EE7A36] rounded-xl font-bold hover:shadow-xl transition-all duration-200 hover:scale-105"
+              >
+                Book Free Consultation
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-5 w-5 text-[#EE7A36]"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </Link>
+            </motion.div>
+          </div>
+        </section>
+        <br /> <br />
+        <br />
         {/* Services Cards */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
         >
           {services.map((service, index) => {
             const Icon = service.icon;
@@ -244,7 +310,6 @@ export default function Services() {
             );
           })}
         </motion.div>
-
         {/* Button */}
         <div className="mt-16 text-center">
           <motion.a
@@ -254,7 +319,10 @@ export default function Services() {
             whileTap={{ scale: 0.95 }}
           >
             View All Services
-            <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
+            <ArrowRight
+              className="group-hover:translate-x-1 transition-transform"
+              size={20}
+            />
           </motion.a>
         </div>
       </div>

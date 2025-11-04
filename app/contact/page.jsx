@@ -58,7 +58,7 @@ export default function ContactPage() {
 
   return (
     <main className="bg-background transition-colors duration-300">
-      <section className="min-h-screen pt-32 pb-12 px-4">
+      <section className="min-h-screen py-42 pb-12 px-4">
         <div className="max-w-7xl mx-auto">
           {/* Header */}
           <motion.div
@@ -86,9 +86,9 @@ export default function ContactPage() {
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="bg-card rounded-lg border border-border p-8 hover:border-cyan-500/50 transition-all"
+                  className="bg-card rounded-lg border p-8 border-orange-400 hover:border-orange-300 transition-all"
                 >
-                  <div className="w-12 h-12 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-lg flex items-center justify-center mb-4">
+                  <div className="w-12 h-12 bg-gradient-to-br from-[#EE7A36] to-orange-400  rounded-lg flex items-center justify-center mb-4">
                     <Icon className="w-6 h-6 text-white" />
                   </div>
                   <h3 className="font-semibold text-lg  mb-2">
@@ -97,7 +97,7 @@ export default function ContactPage() {
                   {info.link ? (
                     <a
                       href={info.link}
-                      className="text-gray-400 hover:text-cyan-500 transition-colors"
+                      className="text-gray-400 hover:text-orange-500 transition-colors"
                     >
                       {info.value}
                     </a>
@@ -114,7 +114,7 @@ export default function ContactPage() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="bg-card rounded-lg border border-border p-8 md:p-12"
+            className="bg-card rounded-lg border border-gray-300 p-8 md:p-12"
           >
             {submitted ? (
               <motion.div
@@ -142,7 +142,7 @@ export default function ContactPage() {
                       onChange={handleChange}
                       placeholder="Your name"
                       required
-                      className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground placeholder-muted-foreground focus:outline-none focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 transition-all"
+                      className="w-full px-4 py-3 rounded-lg border border-gray-300 bg-background text-foreground placeholder-muted-foreground focus:outline-none focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 transition-all"
                     />
                   </div>
                   <div>
@@ -156,7 +156,7 @@ export default function ContactPage() {
                       onChange={handleChange}
                       placeholder="your@email.com"
                       required
-                      className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground placeholder-muted-foreground focus:outline-none  focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 transition-all"
+                      className="w-full px-4 py-3 rounded-lg border border-gray-300 bg-background text-foreground placeholder-muted-foreground focus:outline-none  focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 transition-all"
                     />
                   </div>
                 </div>
@@ -172,7 +172,7 @@ export default function ContactPage() {
                       value={formData.phone}
                       onChange={handleChange}
                       placeholder="+92 (123) 456-7890"
-                      className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground placeholder-muted-foreground  focus:outline-none focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 transition-all"
+                      className="w-full px-4 py-3 rounded-lg border border-gray-300 bg-background text-foreground placeholder-muted-foreground  focus:outline-none focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 transition-all"
                     />
                   </div>
                   <div>
@@ -186,7 +186,7 @@ export default function ContactPage() {
                       onChange={handleChange}
                       placeholder="How can we help?"
                       required
-                      className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground placeholder-muted-foreground  focus:outline-none focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 transition-all"
+                      className="w-full px-4 py-3 rounded-lg border border-gray-300 bg-background text-foreground placeholder-muted-foreground  focus:outline-none focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 transition-all"
                     />
                   </div>
                 </div>
@@ -202,13 +202,13 @@ export default function ContactPage() {
                     placeholder="Tell us more about your inquiry..."
                     required
                     rows="6"
-                    className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground placeholder-muted-foreground  focus:outline-none focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 transition-all resize-none"
+                    className="w-full px-4 py-3 rounded-lg border border-gray-300 bg-background text-foreground placeholder-muted-foreground  focus:outline-none focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 transition-all resize-none"
                   />
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold py-4 cursor-pointer rounded-lg hover:opacity-90 transition-all flex items-center justify-center gap-2"
+                  className="w-full bg-gradient-to-r from-[#EE7A36] to-orange-400  text-white font-semibold py-4 cursor-pointer rounded-lg hover:opacity-90 transition-all flex items-center justify-center gap-2"
                 >
                   <Send className="w-5 h-5" />
                   Send Message
