@@ -22,7 +22,7 @@ export default function Home() {
       <PopularDestinations/>
       <StudyDestinations/>
       <Services />
-      <StudyAbroadcard/>
+      {/* <StudyAbroadcard/> */}
       <WhyChooseUs />
       <Testimonials />
       <TeamSection />
