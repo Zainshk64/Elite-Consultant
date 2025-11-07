@@ -133,8 +133,77 @@ export default function Hero() {
           strategies.
         </motion.p>
 
+        {/* === ELIGIBILITY FORM INSERTED HERE === */}
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: 0.6, duration: 0.8 }}
+      className="bg-white/5 backdrop-blur-md rounded-3xl p-6 sm:p-8 md:p-10 
+                 border border-white/10 shadow-md shadow-orange-200/10 
+                 max-w-7xl mx-auto mt-10 md:mt-16"
+    >
+      <form className="flex flex-col lg:flex-row flex-wrap gap-4 lg:gap-6 items-center justify-center w-full">
+        {/* Dropdowns */}
+        <select className="px-4 py-3 rounded-full bg-white/10 text-white text-sm outline-none border border-white/10 w-full sm:w-[45%] lg:w-auto">
+          <option className="bg-gray-400">Select Country</option>
+          <option className="bg-gray-400">Australia</option>
+          <option className="bg-gray-400">Canada</option>
+          <option className="bg-gray-400">UK</option>
+          <option className="bg-gray-400">USA</option>
+        </select>
+
+        <select className="px-4 py-3 rounded-full bg-white/10 text-white text-sm outline-none border border-white/10 w-full sm:w-[45%] lg:w-auto">
+          <option className="bg-gray-400">Course Type</option>
+          <option className="bg-gray-400">Undergraduate</option>
+          <option className="bg-gray-400">Postgraduate</option>
+          <option className="bg-gray-400">Diploma</option>
+        </select>
+
+        <select className="px-4 py-3 rounded-full bg-white/10 text-white text-sm outline-none border border-white/10 w-full sm:w-[45%] lg:w-auto">
+          <option>Budget Range</option>
+          <option className="bg-gray-400">Below $10,000</option>
+          <option className="bg-gray-400">$10,000 – $20,000</option>
+          <option className="bg-gray-400">Above $20,000</option>
+        </select>
+
+        <select className="px-4 py-3 rounded-full bg-white/10 text-white text-sm outline-none border border-white/10 w-full sm:w-[45%] lg:w-auto">
+          <option className="bg-gray-400">IELTS Required?</option>
+          <option className="bg-gray-400">Yes</option>
+          <option className="bg-gray-400">No</option>
+        </select>
+
+        {/* Primary Action */}
+        <button
+          type="submit"
+          className="px-6 py-3 border-2 border-[#EE7A36]/50 text-orange-300 
+                     rounded-full cursor-pointer font-semibold hover:bg-[#EE7A36]/10 
+                     hover:border-[#EE7A36] transition-all duration-300 backdrop-blur-sm
+                     w-full sm:w-[45%] lg:w-auto"
+        >
+          Check Eligibility
+        </button>
+
+        {/* Secondary Action */}
+        <Link href="/appointment" className="w-full sm:w-[45%] lg:w-auto">
+          <motion.div
+            className="group px-6 py-3 bg-[#EE7A36] text-white rounded-full font-semibold 
+                       hover:shadow-2xl hover:shadow-[#EE7A36]/40 transition-all duration-300 
+                       flex items-center justify-center gap-2 border border-orange-400/20"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            Book Consultation
+            <ArrowRight
+              className="group-hover:translate-x-1 transition-transform"
+              size={20}
+            />
+          </motion.div>
+        </Link>
+      </form>
+    </motion.div>
+
         {/* Buttons */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6, duration: 0.8 }}
@@ -167,7 +236,7 @@ export default function Hero() {
               Explore Services
             </motion.div>
           </Link>
-        </motion.div>
+        </motion.div> */}
 
         {/* Counters */}
         <motion.div
