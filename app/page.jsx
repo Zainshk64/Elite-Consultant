@@ -9,6 +9,7 @@ import TeamSection from "@/components/sections/team"
 import CTA from "@/components/sections/cta"
 import Footer from "@/components/footer"
 import Navbar from '@/components/navbar'
+import StudyAbroadcard from "../components/sections/study-abroadcard"
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
       <Navbar/>
       <HeroSection />
       <Services />
+      <StudyAbroadcard/>
       <WhyChooseUs />
       <Testimonials />
       <TeamSection />
