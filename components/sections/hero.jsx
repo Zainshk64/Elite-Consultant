@@ -92,7 +92,7 @@ export default function Hero() {
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(251,146,60,0.1),transparent_50%)]" />
 
       {/* ===== HERO CONTENT ===== */}
-      <div className="px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="px-4 sm:px-6 lg:px-8 w-full  relative z-10">
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -140,7 +140,7 @@ export default function Hero() {
           transition={{ delay: 0.6, duration: 0.8 }}
           className="bg-white/5 backdrop-blur-md rounded-3xl p-6 sm:p-8 md:p-10 
                  border border-white/10 shadow-md shadow-orange-200/10 
-                 max-w-7xl mx-auto mt-6 md:mt-7"
+                 max-w-7xl  mt-6 md:mt-7"
         >
           <form className="flex flex-col lg:flex-row flex-wrap gap-4 lg:gap-6 items-center justify-center w-full">
             {/* Dropdowns */}
