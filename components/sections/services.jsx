@@ -298,13 +298,15 @@ export default function Services() {
                     ))}
                   </div>
 
-                  <motion.button
-                    whileHover={{ x: 5 }}
-                    className="flex items-center justify-center gap-2 text-orange-600 text-sm font-semibold mx-auto"
-                  >
-                    Learn More
-                    <ArrowRight size={16} />
-                  </motion.button>
+                  <Link href={"/services"}>
+                    <motion.button
+                      whileHover={{ x: 5 }}
+                      className="flex items-center cursor-pointer justify-center gap-2 text-orange-600 text-sm font-semibold mx-auto"
+                    >
+                      Learn More
+                      <ArrowRight size={16} />
+                    </motion.button>
+                  </Link>
                 </div>
               </motion.div>
             );
@@ -312,18 +314,19 @@ export default function Services() {
         </motion.div>
         {/* Button */}
         <div className="mt-16 text-center">
-          <motion.Link
-            href="/services"
-            className="inline-flex items-center gap-3 px-8 py-4 bg-[#EE7A36] text-white rounded-xl font-semibold hover:bg-orange-600 hover:shadow-lg transition-all duration-300"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            View All Services
-            <ArrowRight
-              className="group-hover:translate-x-1 transition-transform"
-              size={20}
-            />
-          </motion.Link>
+          <Link href={"/services"}>
+            <motion.div
+              className="inline-flex items-center cursor-pointer gap-3 px-8 py-4 bg-[#EE7A36] text-white rounded-xl font-semibold hover:bg-orange-600 hover:shadow-lg transition-all duration-300"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              View All Services
+              <ArrowRight
+                className="group-hover:translate-x-1 transition-transform"
+                size={20}
+              />
+            </motion.div>
+          </Link>
         </div>
       </div>
     </section>

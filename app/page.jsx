@@ -10,6 +10,8 @@ import CTA from "@/components/sections/cta"
 import Footer from "@/components/footer"
 import Navbar from '@/components/navbar'
 import StudyAbroadcard from "../components/sections/study-abroadcard"
+import StudyDestinations from "../components/sections/study-destinations"
+import PopularDestinations from "../components/sections/popular-destination"
 
 export default function Home() {
   return (
@@ -17,6 +19,8 @@ export default function Home() {
       {/* <Navigation /> */}
       <Navbar/>
       <HeroSection />
+      <PopularDestinations/>
+      <StudyDestinations/>
       <Services />
       <StudyAbroadcard/>
       <WhyChooseUs />
