@@ -1,7 +1,8 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { Home, Search, ArrowLeft, Plane, MapPin, Compass } from "lucide-react"
+import { motion } from "framer-motion";
+import { Home, Search, ArrowLeft, Plane, MapPin, Compass } from "lucide-react";
+import Link from "next/link";
 
 export default function NotFound() {
   return (
@@ -39,12 +40,16 @@ export default function NotFound() {
             key={i}
             className="absolute"
             initial={{
-              x: Math.random() * (typeof window !== 'undefined' ? window.innerWidth : 1000),
+              x:
+                Math.random() *
+                (typeof window !== "undefined" ? window.innerWidth : 1000),
               y: -50,
             }}
             animate={{
-              x: Math.random() * (typeof window !== 'undefined' ? window.innerWidth : 1000),
-              y: typeof window !== 'undefined' ? window.innerHeight + 50 : 1000,
+              x:
+                Math.random() *
+                (typeof window !== "undefined" ? window.innerWidth : 1000),
+              y: typeof window !== "undefined" ? window.innerHeight + 50 : 1000,
               rotate: 360,
             }}
             transition={{
@@ -92,9 +97,9 @@ export default function NotFound() {
             >
               <div className="w-full h-full rounded-full border-4 border-[#EE7A36]/30" />
             </motion.div>
-            
+
             <Compass className="w-16 h-16 text-white" />
-            
+
             <motion.div
               className="absolute -top-2 -right-2 w-10 h-10 bg-yellow-400 rounded-full flex items-center justify-center shadow-lg"
               animate={{ rotate: 360 }}
@@ -125,10 +130,12 @@ export default function NotFound() {
             Oops! Destination Not Found
           </h2>
           <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto mb-2">
-            Looks like you've wandered off the map! This page seems to be on a different journey.
+            Looks like you've wandered off the map! This page seems to be on a
+            different journey.
           </p>
           <p className="text-base text-gray-500">
-            Don't worry, we'll help you get back on track to your educational dreams.
+            Don't worry, we'll help you get back on track to your educational
+            dreams.
           </p>
         </motion.div>
 
@@ -138,25 +145,27 @@ export default function NotFound() {
           transition={{ delay: 0.7, duration: 0.8 }}
           className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12"
         >
-          <motion.a
-            href="/"
-            whileHover={{ scale: 1.05, y: -2 }}
-            whileTap={{ scale: 0.95 }}
-            className="group flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-[#EE7A36] to-orange-500 text-white rounded-xl font-bold text-lg shadow-lg hover:shadow-2xl hover:shadow-orange-500/30 transition-all"
-          >
-            <Home className="w-6 h-6 group-hover:rotate-12 transition-transform" />
-            Back to Home
-          </motion.a>
+          <Link href="/">
+            <motion.button
+              whileHover={{ scale: 1.05, y: -2 }}
+              whileTap={{ scale: 0.95 }}
+              className="group flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-[#EE7A36] to-orange-500 text-white rounded-xl font-bold text-lg shadow-lg hover:shadow-2xl hover:shadow-orange-500/30 transition-all"
+            >
+              <Home className="w-6 h-6 group-hover:rotate-12 transition-transform" />
+              Back to Home
+            </motion.button>
+          </Link>
 
-          <motion.a
-            href="/services"
-            whileHover={{ scale: 1.05, y: -2 }}
-            whileTap={{ scale: 0.95 }}
-            className="group flex items-center gap-3 px-8 py-4 bg-white border-2 border-[#EE7A36] text-[#EE7A36] rounded-xl font-bold text-lg hover:bg-orange-50 transition-all shadow-lg"
-          >
-            <Search className="w-6 h-6 group-hover:scale-110 transition-transform" />
-            Explore Services
-          </motion.a>
+          <Link href="/services">
+            <motion.button
+              whileHover={{ scale: 1.05, y: -2 }}
+              whileTap={{ scale: 0.95 }}
+              className="group flex items-center gap-3 px-8 py-4 bg-white border-2 border-[#EE7A36] text-[#EE7A36] rounded-xl font-bold text-lg hover:bg-orange-50 transition-all shadow-lg"
+            >
+              <Search className="w-6 h-6 group-hover:scale-110 transition-transform" />
+              Explore Services
+            </motion.button>
+          </Link>
         </motion.div>
 
         <motion.div
@@ -170,21 +179,22 @@ export default function NotFound() {
             { icon: Search, label: "Services", href: "/services" },
             { icon: MapPin, label: "Contact", href: "/contact" },
           ].map((item, index) => (
-            <motion.a
-              key={index}
-              href={item.href}
-              whileHover={{ y: -5 }}
-              className="group p-6 bg-white rounded-2xl border-2 border-gray-200 hover:border-[#EE7A36] hover:shadow-xl transition-all"
-            >
-              <div className="flex flex-col items-center gap-3">
-                <div className="w-14 h-14 bg-gradient-to-br from-orange-100 to-orange-50 rounded-full flex items-center justify-center group-hover:from-[#EE7A36] group-hover:to-orange-500 transition-all">
-                  <item.icon className="w-7 h-7 text-[#EE7A36] group-hover:text-white transition-colors" />
+            <Link href={item.href}>
+              <motion.div
+                key={index}
+                whileHover={{ y: -5 }}
+                className="group p-6 bg-white rounded-2xl border-2 border-gray-200 hover:border-[#EE7A36] hover:shadow-xl transition-all"
+              >
+                <div className="flex flex-col items-center gap-3">
+                  <div className="w-14 h-14 bg-gradient-to-br from-orange-100 to-orange-50 rounded-full flex items-center justify-center group-hover:from-[#EE7A36] group-hover:to-orange-500 transition-all">
+                    <item.icon className="w-7 h-7 text-[#EE7A36] group-hover:text-white transition-colors" />
+                  </div>
+                  <span className="text-gray-700 font-semibold group-hover:text-[#EE7A36] transition-colors">
+                    {item.label}
+                  </span>
                 </div>
-                <span className="text-gray-700 font-semibold group-hover:text-[#EE7A36] transition-colors">
-                  {item.label}
-                </span>
-              </div>
-            </motion.a>
+              </motion.div>
+            </Link>
           ))}
         </motion.div>
 
@@ -235,5 +245,5 @@ export default function NotFound() {
 
       <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#EE7A36] to-transparent opacity-50" />
     </div>
-  )
+  );
 }

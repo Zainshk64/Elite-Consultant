@@ -6,7 +6,23 @@ import { Plane, Globe, GraduationCap, Sparkles } from "lucide-react"
 
 export default function Loading() {
   const [progress, setProgress] = useState(0)
+  const [dimensions, setDimensions] = useState({ width: 1920, height: 1080 })
 
+  // Get window size safely
+  useEffect(() => {
+    const updateDimensions = () => {
+      setDimensions({
+        width: window.innerWidth,
+        height: window.innerHeight,
+      })
+    }
+
+    updateDimensions()
+    window.addEventListener("resize", updateDimensions)
+    return () => window.removeEventListener("resize", updateDimensions)
+  }, [])
+
+  // Progress bar
   useEffect(() => {
     const timer = setInterval(() => {
       setProgress((prev) => {
@@ -21,6 +37,8 @@ export default function Loading() {
     return () => clearInterval(timer)
   }, [])
 
+  const { width, height } = dimensions
+
   return (
     <AnimatePresence>
       <motion.div
@@ -29,6 +47,7 @@ export default function Loading() {
         transition={{ duration: 0.5 }}
         className="fixed inset-0 flex items-center justify-center bg-gradient-to-br from-white via-orange-50/40 to-white z-[9999] overflow-hidden"
       >
+        {/* Background Blobs */}
         <div className="absolute inset-0">
           <motion.div
             className="absolute top-20 left-20 w-72 h-72 bg-[#EE7A36]/10 rounded-full blur-3xl"
@@ -58,15 +77,19 @@ export default function Loading() {
           />
         </div>
 
+        {/* Flying Planes */}
         <div className="absolute inset-0 pointer-events-none">
           {[...Array(3)].map((_, i) => (
             <motion.div
               key={i}
               className="absolute"
-              initial={{ x: -100, y: Math.random() * window.innerHeight }}
+              initial={{ 
+                x: -100, 
+                y: Math.random() * height 
+              }}
               animate={{
-                x: window.innerWidth + 100,
-                y: Math.random() * window.innerHeight,
+                x: width + 100,
+                y: Math.random() * height,
               }}
               transition={{
                 duration: 15 + i * 3,
@@ -79,7 +102,6 @@ export default function Loading() {
             </motion.div>
           ))}
         </div>
-
         <div className="relative flex flex-col items-center justify-center">
           <div className="relative w-48 h-48 mb-8">
             <svg

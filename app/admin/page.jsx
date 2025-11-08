@@ -1,27 +1,27 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { motion } from "framer-motion"
-import { GraduationCap, Globe, LogOut, Menu, X, Sparkle, Sparkles } from "lucide-react"
-import CountriesTab from "@/components/admin/CountriesTab"
-import UniversitiesTab from "@/components/admin/UniversitiesTab"
-import { authAPI } from "@/services/adminApi"
+import { useState } from "react";
+import { motion } from "framer-motion";
+import { GraduationCap, Globe, LogOut, Menu, X, Sparkle, Sparkles } from "lucide-react";
+import CountriesTab from "@/components/admin/CountriesTab";
+import UniversitiesTab from "@/components/admin/UniversitiesTab";
+import { authAPI } from "@/services/adminApi";
 
 export default function AdminDashboard() {
-  const [activeTab, setActiveTab] = useState("universities")
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false)
+  const [activeTab, setActiveTab] = useState("universities");
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   const handleLogout = () => {
     if (confirm("Are you sure you want to logout?")) {
-      authAPI.logout()
-      window.location.href = "/login"
+      authAPI.logout();
+      window.location.href = "/login";
     }
-  }
+  };
 
   const tabs = [
     { id: "universities", label: "Universities", icon: GraduationCap },
     { id: "countries", label: "Countries", icon: Globe },
-  ]
+  ];
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-orange-50">
@@ -38,11 +38,13 @@ export default function AdminDashboard() {
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 bg-gradient-to-br from-[#EE7A36] to-orange-500 rounded-xl flex items-center justify-center">
                   <span className="text-white font-bold text-lg">
-                    <Sparkles/>
+                    <Sparkles />
                   </span>
                 </div>
                 <div>
-                  <h1 className="text-lg font-bold text-gray-800">H&H Consultant</h1>
+                  <h1 className="text-lg font-bold text-gray-800">
+                    H&H Consultant
+                  </h1>
                   <p className="text-xs text-gray-600">Admin Dashboard</p>
                 </div>
               </div>
@@ -70,13 +72,13 @@ export default function AdminDashboard() {
               className="bg-white rounded-2xl shadow-lg border border-gray-200 p-4 space-y-2"
             >
               {tabs.map((tab) => {
-                const Icon = tab.icon
+                const Icon = tab.icon;
                 return (
                   <button
                     key={tab.id}
                     onClick={() => {
-                      setActiveTab(tab.id)
-                      setIsSidebarOpen(false)
+                      setActiveTab(tab.id);
+                      setIsSidebarOpen(false);
                     }}
                     className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl font-semibold transition-all ${
                       activeTab === tab.id
@@ -87,7 +89,7 @@ export default function AdminDashboard() {
                     <Icon size={20} />
                     {tab.label}
                   </button>
-                )
+                );
               })}
             </motion.div>
           )}
@@ -95,7 +97,7 @@ export default function AdminDashboard() {
 
         <div className="hidden lg:flex gap-4 mb-8">
           {tabs.map((tab) => {
-            const Icon = tab.icon
+            const Icon = tab.icon;
             return (
               <motion.button
                 key={tab.id}
@@ -111,7 +113,7 @@ export default function AdminDashboard() {
                 <Icon size={20} />
                 {tab.label}
               </motion.button>
-            )
+            );
           })}
         </div>
 
@@ -126,5 +128,5 @@ export default function AdminDashboard() {
         </motion.div>
       </div>
     </div>
-  )
+  );
 }

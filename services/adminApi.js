@@ -2,25 +2,18 @@
 
 const BASE_URL = 'http://localhost:5000/api';
 
-// Helper function to get token from localStorage
-const getToken = () => {
-  if (typeof window !== 'undefined') {
-    return localStorage.getItem('adminToken');
-  }
-  return null;
-};
-
-// Helper function to handle API responses
 const handleResponse = async (response) => {
   const data = await response.json();
-  
   if (!response.ok) {
     throw new Error(data.message || 'Something went wrong');
   }
-  
   return data;
 };
 
+export const getToken = () => {
+  if (typeof window === 'undefined') return null;
+  return localStorage.getItem('token') || null;
+};
 // Auth APIs
 export const authAPI = {
   login: async (email, password) => {
