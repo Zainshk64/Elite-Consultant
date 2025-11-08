@@ -1,9 +1,11 @@
 "use client"
 
 import { useState } from "react"
-import { Mail, Lock, Eye, EyeOff, Sparkles, ArrowRight, Shield, Zap, Users } from "lucide-react"
+import { Mail, Lock, Eye, EyeOff, Sparkles, ArrowRight, Shield, Zap, Users, AlertCircle } from "lucide-react"
 import { motion } from "framer-motion"
 import Link from "next/link"
+import { toast } from "react-hot-toast"
+import { authAPI } from "@/services/adminApi"
 
 export default function LoginPage() {
   const [showPassword, setShowPassword] = useState(false)
@@ -13,19 +15,60 @@ export default function LoginPage() {
     password: "",
   })
   const [rememberMe, setRememberMe] = useState(false)
+  const [error, setError] = useState("")
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target
-    setFormData((prev) => ({ ...prev, [name]: value }))
+    setFormData({ ...formData, [e.target.name]: e.target.value })
+    setError("")
   }
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsLoading(true)
-    await new Promise((resolve) => setTimeout(resolve, 1500))
-    setIsLoading(false)
-    alert("Login successful!")
+    setError("")
+
+    try {
+      const response = await authAPI.login(formData.email, formData.password)
+
+      if (response?.success) {
+        if (typeof window !== "undefined") {
+          localStorage.setItem("adminToken", response.token)
+          localStorage.setItem("adminData", JSON.stringify(response.admin))
+        }
+
+        toast.success("Login successful! Redirecting...")
+
+        setTimeout(() => {
+          window.location.href = "/admin"
+        }, 1000)
+      } else {
+        toast.error(response?.message || "Invalid credentials")
+        setError(response?.message || "Invalid credentials")
+      }
+    } catch (err: unknown) {
+      const message =
+        err instanceof Error ? err.message : "Login failed. Please try again."
+      setError(message)
+      toast.error(message)
+    } finally {
+      setIsLoading(false)
+    }
   }
+
+
+
+  // const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  //   const { name, value } = e.target
+  //   setFormData((prev) => ({ ...prev, [name]: value }))
+  // }
+
+  // const handleSubmit = async (e: React.FormEvent) => {
+  //   e.preventDefault()
+  //   setIsLoading(true)
+  //   await new Promise((resolve) => setTimeout(resolve, 1500))
+  //   setIsLoading(false)
+  //   alert("Login successful!")
+  // }
 
   const benefits = [
     { icon: Shield, text: "Secure & Trusted Platform" },
@@ -151,6 +194,16 @@ export default function LoginPage() {
                 transition={{ delay: 0.5 }}
                 className="space-y-2"
               >
+                {error && (
+              <motion.div
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="mb-6 p-4 bg-red-50 border border-red-200 rounded-xl flex items-center gap-3"
+              >
+                <AlertCircle className="text-red-500" size={20} />
+                <p className="text-red-700 text-sm">{error}</p>
+              </motion.div>
+            )}
                 <label className="block text-sm font-medium text-gray-700">
                   Email Address
                 </label>
