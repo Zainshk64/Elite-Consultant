@@ -40,19 +40,19 @@ export default function ContactPage() {
     {
       icon: Phone,
       label: "Phone",
-      value: "+92 (123) 456-7890",
-      link: "tel:+92123456789",
+      value: "051 2120340 ",
+      link: "tel:051 2120340",
     },
     {
       icon: Mail,
       label: "Email",
-      value: "info@H&Hconsultant.com",
-      link: "mailto:info@H&Hconsultant.com",
+      value: "handhvisaconsultants@gmail.com",
+      link: "mailto:handhvisaconsultants@gmail.com",
     },
     {
       icon: MapPin,
       label: "Address",
-      value: "123 Consulting Ave, City Center",
+      value: "ATS Centre, 3rd Floor, AK Fazal e Haq Road, G6/Blue Area, Islamabad, 44000",
     },
   ];
 

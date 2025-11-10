@@ -130,50 +130,59 @@ export default function Footer() {
             transition={{ duration: 0.5, delay: 0.3 }}
           >
             <h3 className="font-semibold mb-4">Contact</h3>
-           <ul className="space-y-3">
-  <li className="flex items-start gap-2">
-    <Phone size={18} className="text-[#EE7A36] mt-1 flex-shrink-0" />
-    <a
-      href="https://wa.me/03275518166"
-      className="text-gray-400 hover:text-[#EE7A36] transition-colors"
-    >
-      0327 5518166
-    </a>
-  </li>
+            <ul className="space-y-3">
+              <li className="flex items-start gap-2">
+                <Phone
+                  size={18}
+                  className="text-[#EE7A36] mt-1 flex-shrink-0"
+                />
+                <a
+                  href="https://wa.me/03275518166"
+                  className="text-gray-400 hover:text-[#EE7A36] transition-colors"
+                >
+                  0327 5518166
+                </a>
+              </li>
 
-  <li className="flex items-start gap-2">
-    <PhoneCall size={18} className="text-[#EE7A36] mt-1 flex-shrink-0" />
-    <a
-      href="tel:0512120340"
-      className="text-gray-400 hover:text-[#EE7A36] transition-colors"
-    >
-      051 2120340
-    </a>
-  </li>
+              <li className="flex items-start gap-2">
+                <PhoneCall
+                  size={18}
+                  className="text-[#EE7A36] mt-1 flex-shrink-0"
+                />
+                <a
+                  href="tel:0512120340"
+                  className="text-gray-400 hover:text-[#EE7A36] transition-colors"
+                >
+                  051 2120340
+                </a>
+              </li>
 
-  <li className="flex items-start gap-2">
-    <Mail size={18} className="text-[#EE7A36] mt-1 flex-shrink-0" />
-    <a
-      href="mailto:handhvisaconsultants@gmail.com"
-      className="text-gray-400 hover:text-[#EE7A36] transition-colors break-all"
-    >
-      handhvisaconsultants@gmail.com
-    </a>
-  </li>
+              <li className="flex items-start gap-2">
+                <Mail size={18} className="text-[#EE7A36] mt-1 flex-shrink-0" />
+                <a
+                  href="mailto:handhvisaconsultants@gmail.com"
+                  className="text-gray-400 hover:text-[#EE7A36] transition-colors break-all"
+                >
+                  handhvisaconsultants@gmail.com
+                </a>
+              </li>
 
-  <li className="flex items-start gap-2">
-    <MapPin size={18} className="text-[#EE7A36] mt-1 flex-shrink-0" />
-    <a
-      href="https://www.google.com/maps?q=ATS+Centre,+3rd+Floor,+AK+Fazal+e+Haq+Road,+G6+Blue+Area,+Islamabad,+44000"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="text-gray-400 hover:text-[#EE7A36] transition-colors"
-    >
-      ATS Centre, 3rd Floor, AK Fazal e Haq Road, G6/Blue Area, Islamabad, 44000
-    </a>
-  </li>
-</ul>
-
+              <li className="flex items-start gap-2">
+                <MapPin
+                  size={18}
+                  className="text-[#EE7A36] mt-1 flex-shrink-0"
+                />
+                <a
+                  href="https://www.google.com/maps?q=ATS+Centre,+3rd+Floor,+AK+Fazal+e+Haq+Road,+G6+Blue+Area,+Islamabad,+44000"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-[#EE7A36] transition-colors"
+                >
+                  ATS Centre, 3rd Floor, AK Fazal e Haq Road, G6/Blue Area,
+                  Islamabad, 44000
+                </a>
+              </li>
+            </ul>
           </motion.div>
         </div>
 
