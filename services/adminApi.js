@@ -1,26 +1,28 @@
 // services/adminApi.js
 
-const BASE_URL = 'http://localhost:5000/api';
+const BASE_URL = "http://localhost:5000/api";
 
 const handleResponse = async (response) => {
   const data = await response.json();
   if (!response.ok) {
-    throw new Error(data.message || 'Something went wrong');
+    throw new Error(data.message || "Something went wrong");
   }
   return data;
 };
 
 export const getToken = () => {
-  if (typeof window === 'undefined') return null;
-  return localStorage.getItem('token') || null;
+  if (typeof window === "undefined") return null;
+  let token = localStorage.getItem("adminToken") || null;
+  console.log(token);
+  return token;
 };
 // Auth APIs
 export const authAPI = {
   login: async (email, password) => {
     const response = await fetch(`${BASE_URL}/auth/login`, {
-      method: 'POST',
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
       body: JSON.stringify({ email, password }),
     });
@@ -28,8 +30,8 @@ export const authAPI = {
   },
 
   logout: () => {
-    if (typeof window !== 'undefined') {
-      localStorage.removeItem('adminToken');
+    if (typeof window !== "undefined") {
+      localStorage.removeItem("adminToken");
     }
   },
 };
@@ -39,20 +41,20 @@ export const authAPI = {
 export const countryAPI = {
   getAll: async () => {
     const response = await fetch(`${BASE_URL}/countries`, {
-      method: 'GET',
+      method: "GET",
       headers: {
-        'Authorization': `Bearer ${getToken()}`,
+        Authorization: `Bearer ${getToken()}`,
       },
     });
     return handleResponse(response);
   },
 
   create: async (formData, isMultipart = false) => {
-    const headers = { 'Authorization': `Bearer ${getToken()}` };
-    if (!isMultipart) headers['Content-Type'] = 'application/json';
+    const headers = { Authorization: `Bearer ${getToken()}` };
+    if (!isMultipart) headers["Content-Type"] = "application/json";
 
     const response = await fetch(`${BASE_URL}/countries`, {
-      method: 'POST',
+      method: "POST",
       headers,
       body: isMultipart ? formData : JSON.stringify(formData),
     });
@@ -60,11 +62,11 @@ export const countryAPI = {
   },
 
   update: async (id, formData, isMultipart = false) => {
-    const headers = { 'Authorization': `Bearer ${getToken()}` };
-    if (!isMultipart) headers['Content-Type'] = 'application/json';
+    const headers = { Authorization: `Bearer ${getToken()}` };
+    if (!isMultipart) headers["Content-Type"] = "application/json";
 
     const response = await fetch(`${BASE_URL}/countries/${id}`, {
-      method: 'PUT',
+      method: "PUT",
       headers,
       body: isMultipart ? formData : JSON.stringify(formData),
     });
@@ -73,9 +75,9 @@ export const countryAPI = {
 
   delete: async (id) => {
     const response = await fetch(`${BASE_URL}/countries/${id}`, {
-      method: 'DELETE',
+      method: "DELETE",
       headers: {
-        'Authorization': `Bearer ${getToken()}`,
+        Authorization: `Bearer ${getToken()}`,
       },
     });
     return handleResponse(response);
@@ -87,10 +89,10 @@ export const universityAPI = {
   // Get all universities
   getAll: async () => {
     const response = await fetch(`${BASE_URL}/universities`, {
-      method: 'GET',
+      method: "GET",
       headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${getToken()}`,
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${getToken()}`,
       },
     });
     return handleResponse(response);
@@ -99,17 +101,17 @@ export const universityAPI = {
   // Get single university
   getById: async (id) => {
     const response = await fetch(`${BASE_URL}/universities/${id}`, {
-      method: 'GET',
+      method: "GET",
       headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${getToken()}`,
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${getToken()}`,
       },
     });
     return handleResponse(response);
   },
 
   // Create university
- create: async (formData, isMultipart = false) => {
+  create: async (formData, isMultipart = false) => {
     const headers = { Authorization: `Bearer ${getToken()}` };
     if (!isMultipart) headers["Content-Type"] = "application/json";
 
@@ -133,14 +135,13 @@ export const universityAPI = {
     return handleResponse(res);
   },
 
-
   // Delete university
   delete: async (id) => {
     const response = await fetch(`${BASE_URL}/universities/${id}`, {
-      method: 'DELETE',
+      method: "DELETE",
       headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${getToken()}`,
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${getToken()}`,
       },
     });
     return handleResponse(response);
