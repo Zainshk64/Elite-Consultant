@@ -1,204 +1,115 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useEffect, useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { Plane, Globe, GraduationCap, Sparkles } from "lucide-react"
+import { Plane } from "lucide-react"
 
 export default function Loading() {
-  const [progress, setProgress] = useState(0)
-  const [dimensions, setDimensions] = useState({ width: 1920, height: 1080 })
+  const [showLoader, setShowLoader] = useState(true)
 
-  // Get window size safely
   useEffect(() => {
-    const updateDimensions = () => {
-      setDimensions({
-        width: window.innerWidth,
-        height: window.innerHeight,
-      })
-    }
+    // Optional: Auto-hide after some time (for demo purposes)
+    // Remove this in production or handle it via parent component
+    const timer = setTimeout(() => {
+      setShowLoader(true)
+    }, 5000)
 
-    updateDimensions()
-    window.addEventListener("resize", updateDimensions)
-    return () => window.removeEventListener("resize", updateDimensions)
+    return () => clearTimeout(timer)
   }, [])
-
-  // Progress bar
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setProgress((prev) => {
-        if (prev >= 100) {
-          clearInterval(timer)
-          return 100
-        }
-        return prev + 2
-      })
-    }, 30)
-
-    return () => clearInterval(timer)
-  }, [])
-
-  const { width, height } = dimensions
 
   return (
     <AnimatePresence>
-      <motion.div
-        initial={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-        transition={{ duration: 0.5 }}
-        className="fixed inset-0 flex items-center justify-center bg-gradient-to-br from-white via-orange-50/40 to-white z-[9999] overflow-hidden"
-      >
-        {/* Background Blobs */}
-        <div className="absolute inset-0">
-          <motion.div
-            className="absolute top-20 left-20 w-72 h-72 bg-[#EE7A36]/10 rounded-full blur-3xl"
-            animate={{
-              x: [0, 100, 0],
-              y: [0, -100, 0],
-              scale: [1, 1.2, 1],
-            }}
-            transition={{
-              duration: 8,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-          />
-          <motion.div
-            className="absolute bottom-20 right-20 w-96 h-96 bg-orange-300/10 rounded-full blur-3xl"
-            animate={{
-              x: [0, -100, 0],
-              y: [0, 100, 0],
-              scale: [1, 1.3, 1],
-            }}
-            transition={{
-              duration: 10,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-          />
-        </div>
-
-        {/* Flying Planes */}
-        <div className="absolute inset-0 pointer-events-none">
-          {[...Array(3)].map((_, i) => (
+      {showLoader && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.5 }}
+          className="fixed inset-0 flex items-center justify-center bg-gradient-to-br from-white via-orange-50/30 to-white z-[9999] overflow-hidden"
+        >
+          {/* Animated Background Blobs */}
+          <div className="absolute inset-0 overflow-hidden">
             <motion.div
-              key={i}
-              className="absolute"
-              initial={{ 
-                x: -100, 
-                y: Math.random() * height 
-              }}
+              className="absolute -top-40 -left-40 w-[500px] h-[500px] bg-[#EE7A36]/5 rounded-full blur-3xl"
               animate={{
-                x: width + 100,
-                y: Math.random() * height,
+                scale: [1, 1.2, 1],
+                x: [0, 50, 0],
+                y: [0, 30, 0],
               }}
               transition={{
-                duration: 15 + i * 3,
+                duration: 8,
                 repeat: Infinity,
-                ease: "linear",
-                delay: i * 5,
+                ease: "easeInOut",
               }}
-            >
-              <Plane className="text-[#EE7A36]/20 w-8 h-8 transform rotate-45" />
-            </motion.div>
-          ))}
-        </div>
-        <div className="relative flex flex-col items-center justify-center">
-          <div className="relative w-48 h-48 mb-8">
-            <svg
-              className="absolute inset-0 w-48 h-48 transform -rotate-90"
-              viewBox="0 0 200 200"
-            >
-              <circle
-                cx="100"
-                cy="100"
-                r="85"
-                stroke="#FED7AA"
-                strokeWidth="8"
-                fill="none"
-              />
-              <motion.circle
-                cx="100"
-                cy="100"
-                r="85"
-                stroke="url(#gradient)"
-                strokeWidth="8"
-                fill="none"
-                strokeLinecap="round"
-                strokeDasharray={534}
-                strokeDashoffset={534 - (534 * progress) / 100}
-                transition={{ duration: 0.3, ease: "easeOut" }}
-              />
-              <defs>
-                <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stopColor="#EE7A36" />
-                  <stop offset="50%" stopColor="#FB923C" />
-                  <stop offset="100%" stopColor="#FDBA74" />
-                </linearGradient>
-              </defs>
-            </svg>
-
+            />
             <motion.div
-              className="absolute inset-0"
-              animate={{ rotate: 360 }}
-              transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+              className="absolute -bottom-40 -right-40 w-[600px] h-[600px] bg-orange-400/5 rounded-full blur-3xl"
+              animate={{
+                scale: [1, 1.3, 1],
+                x: [0, -50, 0],
+                y: [0, -30, 0],
+              }}
+              transition={{
+                duration: 10,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+            />
+          </div>
+
+          {/* Main Content Container */}
+          <div className="relative z-10 flex flex-col items-center justify-center w-full max-w-4xl px-6">
+            
+            {/* Background Text Overlay - Faded "H&H Consultant" */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 0.05, scale: 1 }}
+              transition={{ duration: 1, delay: 0.2 }}
+              className="absolute inset-0 flex items-center justify-center pointer-events-none select-none"
             >
-              <motion.div
-                className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2"
-                animate={{
-                  y: [0, -5, 0],
-                }}
-                transition={{
-                  duration: 2,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
-              >
-                <Plane className="text-[#EE7A36] w-8 h-8 transform rotate-90" />
-              </motion.div>
+              <h1 className="text-[12rem] md:text-[16rem] font-black text-gray-900 whitespace-nowrap">
+                H&H
+              </h1>
             </motion.div>
 
-            <div className="absolute inset-0 flex items-center justify-center">
-              <motion.div
-                className="relative"
-                animate={{ scale: [1, 1.05, 1] }}
-                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-              >
-                <div className="w-28 h-28 bg-gradient-to-br from-[#EE7A36] to-orange-400 rounded-full flex items-center justify-center shadow-2xl relative overflow-hidden">
-                  <motion.div
-                    className="absolute inset-0 bg-white/20"
-                    animate={{ rotate: 360 }}
-                    transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
-                    style={{
-                      background: "radial-gradient(circle at 30% 30%, rgba(255,255,255,0.3) 0%, transparent 60%)",
-                    }}
-                  />
-                  
-                  <motion.div
-                    animate={{ rotate: [0, 360] }}
-                    transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
-                  >
-                    <Globe className="text-white w-12 h-12" />
-                  </motion.div>
-                </div>
-
+            {/* Logo Section */}
+            <motion.div
+              initial={{ opacity: 0, y: -30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              className="mb-8"
+            >
+              <div className="relative">
                 <motion.div
-                  className="absolute -top-2 -right-2 w-8 h-8 bg-yellow-400 rounded-full flex items-center justify-center"
-                  animate={{
-                    scale: [1, 1.2, 1],
-                    rotate: [0, 180, 360],
+                  animate={{ 
+                    boxShadow: [
+                      "0 0 20px rgba(238, 122, 54, 0.3)",
+                      "0 0 40px rgba(238, 122, 54, 0.5)",
+                      "0 0 20px rgba(238, 122, 54, 0.3)",
+                    ]
                   }}
-                  transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                  transition={{
+                    duration: 2,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                  }}
+                  className="w-32 h-32 md:w-40 md:h-40 bg-white rounded-3xl flex items-center justify-center shadow-2xl border-4 border-orange-100"
                 >
-                  <Sparkles className="text-white w-4 h-4" />
+                  <img 
+                    src="/logo.png" 
+                    alt="H&H Consultant Logo" 
+                    className="w-24 h-24 md:w-32 md:h-32 object-contain"
+                  />
                 </motion.div>
 
-                {[...Array(3)].map((_, i) => (
+                {/* Ripple Effect */}
+                {/* {[...Array(3)].map((_, i) => (
                   <motion.div
                     key={i}
-                    className="absolute inset-0 w-28 h-28 rounded-full border-2 border-[#EE7A36]/20"
+                    className="absolute inset-0 rounded-3xl border-2 border-[#EE7A36]/30"
                     animate={{
-                      scale: [1, 1.5, 1.5],
-                      opacity: [0.5, 0, 0],
+                      scale: [1, 1.4, 1.4],
+                      opacity: [0.6, 0, 0],
                     }}
                     transition={{
                       duration: 2,
@@ -207,137 +118,246 @@ export default function Loading() {
                       delay: i * 0.6,
                     }}
                   />
-                ))}
-              </motion.div>
-            </div>
-          </div>
+                ))} */}
+              </div>
+            </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2, duration: 0.8 }}
-            className="text-center mb-6"
-          >
+            {/* Brand Name */}
             <motion.div
-              className="flex items-center justify-center gap-2 mb-2"
-              animate={{ scale: [1, 1.02, 1] }}
-              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.5 }}
+              className="text-center mb-12"
             >
-              <GraduationCap className="text-[#EE7A36] w-8 h-8" />
-              <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-[#EE7A36] via-orange-500 to-yellow-500 bg-clip-text text-transparent">
+              <motion.h1
+                className="text-4xl md:text-6xl font-bold mb-3"
+                animate={{
+                  backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
+                }}
+                transition={{
+                  duration: 5,
+                  repeat: Infinity,
+                  ease: "linear",
+                }}
+                style={{
+                  backgroundImage: "linear-gradient(90deg, #EE7A36, #FB923C, #FDBA74, #FB923C, #EE7A36)",
+                  backgroundSize: "200% 100%",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                  backgroundClip: "text",
+                }}
+              >
                 H&H Consultant
-              </h1>
+              </motion.h1>
+              <motion.p
+                className="text-gray-600 text-lg md:text-xl font-medium"
+                animate={{
+                  opacity: [0.7, 1, 0.7],
+                }}
+                transition={{
+                  duration: 2,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+              >
+                Your Gateway to Global Education
+              </motion.p>
             </motion.div>
-            <motion.p
-              className="text-gray-600 text-base font-semibold tracking-wide"
-              animate={{
-                opacity: [0.6, 1, 0.6],
-              }}
-              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-            >
-              Your Gateway to Global Education ✈️
-            </motion.p>
-          </motion.div>
 
-          <motion.div
-            className="flex items-center gap-2 mb-6"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.5 }}
-          >
-            <motion.div
-              className="text-5xl font-bold text-[#EE7A36]"
-              animate={{ scale: [1, 1.1, 1] }}
-              transition={{ duration: 0.5, repeat: Infinity, repeatDelay: 1 }}
-            >
-              {progress}%
-            </motion.div>
-          </motion.div>
-
-          <motion.div
-            className="w-80 max-w-full"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.3 }}
-          >
-            <div className="relative h-3 bg-gray-200 rounded-full overflow-hidden shadow-inner">
+            {/* Plane Animation Track */}
+            <div className="relative w-full max-w-2xl h-24 mb-8">
+              {/* Flight Path Line */}
               <motion.div
-                className="absolute inset-0 bg-gradient-to-r from-[#EE7A36] via-orange-500 to-yellow-500 rounded-full"
-                initial={{ width: "0%" }}
-                animate={{ width: `${progress}%` }}
-                transition={{ duration: 0.3, ease: "easeOut" }}
+                className="absolute top-1/2 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-[#EE7A36]/30 to-transparent"
+                initial={{ scaleX: 0 }}
+                animate={{ scaleX: 1 }}
+                transition={{ duration: 1, delay: 0.8 }}
               />
-              <motion.div
-                className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent"
-                animate={{ x: ["-100%", "200%"] }}
-                transition={{ duration: 1.5, repeat: Infinity, ease: "linear" }}
-              />
-            </div>
-          </motion.div>
 
-          <motion.div
-            className="mt-6 flex items-center gap-2"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.6 }}
-          >
-            <span className="text-gray-700 font-semibold">Loading</span>
-            <motion.span className="flex gap-1.5">
-              {[0, 1, 2].map((i) => (
-                <motion.span
-                  key={i}
-                  className="w-2 h-2 bg-[#EE7A36] rounded-full"
+              {/* Animated Dashed Line */}
+              <svg className="absolute top-1/2 left-0 right-0 w-full h-2 -translate-y-1/2" style={{ overflow: 'visible' }}>
+                <motion.line
+                  x1="0"
+                  y1="0"
+                  x2="100%"
+                  y2="0"
+                  stroke="#EE7A36"
+                  strokeWidth="2"
+                  strokeDasharray="10, 15"
+                  initial={{ strokeDashoffset: 1000 }}
+                  animate={{ strokeDashoffset: 0 }}
+                  transition={{
+                    duration: 2,
+                    repeat: Infinity,
+                    ease: "linear",
+                  repeatDelay: 10,
+
+                  }}
+                  opacity="0.3"
+                />
+              </svg>
+
+              {/* Flying Plane */}
+              <motion.div
+                className="absolute top-1/2 -translate-y-1/2"
+                initial={{ x: -100, opacity: 0 }}
+                animate={{ 
+                  x: "calc(100vw + 100px)",
+                  opacity: [0, 1, 1, 1, 0],
+                }}
+                transition={{
+                  duration: 4,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                  repeatDelay: 10,
+                }}
+              >
+                <motion.div
                   animate={{
-                    y: [0, -12, 0],
-                    scale: [1, 1.3, 1],
+                    y: [0, -8, 0, 8, 0],
+                    rotate: [0, -2, 0, 2, 0],
                   }}
                   transition={{
-                    duration: 0.8,
+                    duration: 2,
                     repeat: Infinity,
-                    delay: i * 0.15,
                     ease: "easeInOut",
+                  }}
+                >
+                  {/* Plane with Trail Effect */}
+                  <div className="relative">
+                    <Plane 
+                      className="text-[#EE7A36] w-12 h-12 md:w-16 md:h-16 transform rotate-45 drop-shadow-lg" 
+                      strokeWidth={2.5}
+                    />
+                    {/* Trail */}
+                    <motion.div
+                      className="absolute top-1/2 right-full w-20 h-1 bg-gradient-to-l from-[#EE7A36]/50 to-transparent rounded-full"
+                      animate={{
+                        opacity: [0.3, 0.6, 0.3],
+                        scaleX: [0.8, 1, 0.8],
+                      }}
+                      transition={{
+                        duration: 1,
+                        repeat: Infinity,
+                        ease: "easeInOut",
+                      }}
+                    />
+                  </div>
+                </motion.div>
+              </motion.div>
+
+              {/* Cloud Decorations */}
+              {[...Array(3)].map((_, i) => (
+                <motion.div
+                  key={i}
+                  className="absolute w-16 h-8 bg-white/40 rounded-full blur-sm"
+                  style={{
+                    top: `${20 + i * 30}%`,
+                    left: `${i * 35}%`,
+                  }}
+                  animate={{
+                    x: [0, 30, 0],
+                    opacity: [0.3, 0.6, 0.3],
+                  }}
+                  transition={{
+                    duration: 4 + i,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                    delay: i * 0.5,
                   }}
                 />
               ))}
-            </motion.span>
-          </motion.div>
+            </div>
 
-          <motion.div className="mt-6 h-8">
-            <AnimatePresence mode="wait">
-              <motion.p
-                key={Math.floor(progress / 20)}
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -10 }}
-                className="text-sm font-medium text-gray-600"
-              >
-                {progress < 20 && "🌍 Connecting to global opportunities..."}
-                {progress >= 20 && progress < 40 && "📚 Loading university database..."}
-                {progress >= 40 && progress < 60 && "✈️ Preparing visa information..."}
-                {progress >= 60 && progress < 80 && "🎓 Setting up your dashboard..."}
-                {progress >= 80 && progress < 100 && "🚀 Almost there..."}
-                {progress === 100 && "✨ Welcome aboard!"}
-              </motion.p>
-            </AnimatePresence>
-          </motion.div>
-        </div>
+            {/* Loading Text with Dots */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.8, delay: 1 }}
+              className="flex items-center gap-3"
+            >
+              <span className="text-xl md:text-2xl font-semibold text-gray-700">
+                Preparing your journey
+              </span>
+              <motion.div className="flex gap-1.5">
+                {[0, 1, 2].map((i) => (
+                  <motion.div
+                    key={i}
+                    className="w-2.5 h-2.5 bg-[#EE7A36] rounded-full"
+                    animate={{
+                      y: [0, -12, 0],
+                      scale: [1, 1.2, 1],
+                    }}
+                    transition={{
+                      duration: 0.8,
+                      repeat: Infinity,
+                      delay: i * 0.15,
+                      ease: "easeInOut",
+                    }}
+                  />
+                ))}
+              </motion.div>
+            </motion.div>
 
-        <motion.div
-          className="absolute top-10 left-10"
-          animate={{ rotate: 360, scale: [1, 1.2, 1] }}
-          transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-        >
-          <div className="w-16 h-16 border-4 border-[#EE7A36]/20 rounded-full border-t-[#EE7A36]" />
+          </div>
+
+          {/* Decorative Corner Elements */}
+          {/* <motion.div
+            className="absolute top-8 left-8 md:top-12 md:left-12"
+            animate={{ 
+              rotate: 360,
+              scale: [1, 1.1, 1],
+            }}
+            transition={{ 
+              rotate: { duration: 20, repeat: Infinity, ease: "linear" },
+              scale: { duration: 2, repeat: Infinity, ease: "easeInOut" },
+            }}
+          >
+            <div className="w-16 h-16 md:w-20 md:h-20 border-4 border-[#EE7A36]/10 rounded-full border-t-[#EE7A36]/40 border-r-[#EE7A36]/40" />
+          </motion.div> */}
+
+          {/* <motion.div
+            className="absolute bottom-8 right-8 md:bottom-12 md:right-12"
+            animate={{ 
+              rotate: -360,
+              scale: [1, 1.2, 1],
+            }}
+            transition={{ 
+              rotate: { duration: 15, repeat: Infinity, ease: "linear" },
+              scale: { duration: 3, repeat: Infinity, ease: "easeInOut" },
+            }}
+          >
+            <div className="w-20 h-20 md:w-24 md:h-24 border-4 border-orange-300/10 rounded-full border-b-orange-400/40 border-l-orange-400/40" />
+          </motion.div> */}
+
+          {/* Small Floating Planes in Background */}
+          {[...Array(2)].map((_, i) => (
+            <motion.div
+              key={i}
+              className="absolute"
+              initial={{ 
+                x: -50,
+                y: 100 + i * 300,
+              }}
+              animate={{
+                x: "100vw",
+                y: 100 + i * 300,
+              }}
+              transition={{
+                duration: 12 + i * 3,
+                repeat: Infinity,
+                ease: "linear",
+                delay: i * 6,
+              }}
+            >
+              <Plane 
+                className="text-[#EE7A36]/10 w-6 h-6 md:w-8 md:h-8 transform rotate-45" 
+              />
+            </motion.div>
+          ))}
+
         </motion.div>
-
-        <motion.div
-          className="absolute bottom-10 right-10"
-          animate={{ rotate: -360, scale: [1, 1.3, 1] }}
-          transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
-        >
-          <div className="w-20 h-20 border-4 border-orange-300/20 rounded-full border-t-orange-400" />
-        </motion.div>
-      </motion.div>
+      )}
     </AnimatePresence>
   )
 }

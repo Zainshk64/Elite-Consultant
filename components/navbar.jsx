@@ -56,12 +56,12 @@ export default function Navbar() {
               {/* <Link href={"/"}> */}
                 <Link href="/" className="flex items-center gap-3 group relative z-10">
                   <motion.div
-                    className="relative w-12 h-12 bg-gradient-to-br from-[#EE7A36] to-orange-400 rounded-2xl flex items-center justify-center overflow-hidden"
+                    // className="relative w-12 h-12 bg-gradient-to-br from-[#EE7A36] to-orange-400 rounded-2xl flex items-center justify-center overflow-hidden"
                     whileHover={{ rotate: 360, scale: 1.1 }}
                     transition={{ duration: 0.6 }}
                   >
-                    <div className="absolute inset-0 bg-gradient-to-br from-orange-200/30 to-orange-600/30 animate-pulse" />
-                    <Sparkles className="text-white" size={24} />
+                                                   <img src="/logo.png" width={60} alt="" />
+                 
                   </motion.div>
                   <div className="hidden lg:block">
                     <span className="block font-bold text-lg text-transparent bg-clip-text bg-gradient-to-r from-[#EE7A36] to-orange-700 transition-all duration-500">
@@ -154,9 +154,8 @@ export default function Navbar() {
               <div className="p-8">
                 <div className="flex justify-between items-center mb-12">
                   <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 bg-gradient-to-br from-orange-400 to-orange-600 rounded-xl flex items-center justify-center">
-                      <Sparkles className="text-white" size={20} />
-                    </div>
+                                                     <img src="/logo.png" width={60} alt="" />
+                   
                     <span className="font-bold text-lg text-gray-800">
                       Menu
                     </span>

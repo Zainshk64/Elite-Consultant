@@ -38,20 +38,26 @@ export default function RootLayout({ children }) {
           <>
             {/* ✅ Show Navbar and Footer only if NOT admin route */}
             {!isAdminRoute && <Navbar />}
-
             <main className="min-h-screen">{children}</main>
-
             <Toaster
-              position="bottom-left"
+              position="bottom-right"
               toastOptions={{
+                duration: 3000,
                 style: {
-                  background: "#333",
-                  color: "#fff",
-                  borderRadius: "10px",
+                  background: "#fff",
+                  color: "#363636",
+                  padding: "16px",
+                  borderRadius: "12px",
+                  boxShadow: "0 4px 12px rgba(0,0,0,0.15)",
+                },
+                success: {
+                  iconTheme: {
+                    primary: "#EE7A36",
+                    secondary: "#fff",
+                  },
                 },
               }}
             />
-
             {!isAdminRoute && <Footer />}
           </>
         )}

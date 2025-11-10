@@ -1,20 +1,35 @@
-"use client"
+"use client";
 
-import Link from "next/link"
-import { Facebook, Instagram, Linkedin, Mail, Phone, MapPin, Sparkles } from "lucide-react"
-import { motion } from "framer-motion"
+import Link from "next/link";
+import {
+  Facebook,
+  Instagram,
+  Linkedin,
+  Mail,
+  Phone,
+  MapPin,
+  Sparkles,
+  PhoneCall,
+} from "lucide-react";
+import { motion } from "framer-motion";
 
 export default function Footer() {
   return (
-    <footer className="bg-card border-border transition-colors duration-300" id="contact">
+    <footer
+      className="bg-card border-border transition-colors duration-300"
+      id="contact"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           {/* Brand */}
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 bg-gradient-to-br from-[#EE7A36] to-orange-400 rounded-lg flex items-center justify-center">
-                  <Sparkles className="text-white" size={24} />
-              </div>
+              <img src="/logo.png" width={60} alt="" />
+
               <span className="font-bold text-lg">H&H Consultant</span>
             </div>
             <p className="text-gray-400 text-sm">
@@ -31,22 +46,34 @@ export default function Footer() {
             <h3 className="font-semibold mb-4">Services</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/services" className="text-gray-400 hover:text-foreground transition-colors">
+                <Link
+                  href="/services"
+                  className="text-gray-400 hover:text-foreground transition-colors"
+                >
                   Education Visa
                 </Link>
               </li>
               <li>
-                <Link href="/services" className="text-gray-400 hover:text-foreground transition-colors">
+                <Link
+                  href="/services"
+                  className="text-gray-400 hover:text-foreground transition-colors"
+                >
                   Career Counseling
                 </Link>
               </li>
               <li>
-                <Link href="/services" className="text-gray-400 hover:text-foreground transition-colors">
+                <Link
+                  href="/services"
+                  className="text-gray-400 hover:text-foreground transition-colors"
+                >
                   Test Prep
                 </Link>
               </li>
               <li>
-                <Link href="/services" className="text-gray-400 hover:text-foreground transition-colors">
+                <Link
+                  href="/services"
+                  className="text-gray-400 hover:text-foreground transition-colors"
+                >
                   University Placement
                 </Link>
               </li>
@@ -62,22 +89,34 @@ export default function Footer() {
             <h3 className="font-semibold mb-4">Company</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/about" className="text-gray-400 hover:text-foreground transition-colors">
+                <Link
+                  href="/about"
+                  className="text-gray-400 hover:text-foreground transition-colors"
+                >
                   About Us
                 </Link>
               </li>
               <li>
-                <Link href="/appointment" className="text-gray-400 hover:text-foreground transition-colors">
+                <Link
+                  href="/appointment"
+                  className="text-gray-400 hover:text-foreground transition-colors"
+                >
                   Book Appointment
                 </Link>
               </li>
               <li>
-                <Link href="/" className="text-gray-400 hover:text-foreground transition-colors">
+                <Link
+                  href="/"
+                  className="text-gray-400 hover:text-foreground transition-colors"
+                >
                   Blog
                 </Link>
               </li>
               <li>
-                <Link href="/" className="text-gray-400 hover:text-foreground transition-colors">
+                <Link
+                  href="/"
+                  className="text-gray-400 hover:text-foreground transition-colors"
+                >
                   FAQ
                 </Link>
               </li>
@@ -91,26 +130,58 @@ export default function Footer() {
             transition={{ duration: 0.5, delay: 0.3 }}
           >
             <h3 className="font-semibold mb-4">Contact</h3>
-            <ul className="space-y-3">
-              <li className="flex items-start gap-2">
-                <Phone size={18} className="text-[#EE7A36] mt-1 flex-shrink-0" />
-                <span className="text-gray-400">+92 (123) 456-7890</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <Mail size={18} className="text-[#EE7A36] mt-1 flex-shrink-0" />
-                <span className="text-gray-400">info@H&Hconsultant.com</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <MapPin size={18} className="text-[#EE7A36] mt-1 flex-shrink-0" />
-                <span className="text-gray-400">123 Consulting Ave, City Center</span>
-              </li>
-            </ul>
+           <ul className="space-y-3">
+  <li className="flex items-start gap-2">
+    <Phone size={18} className="text-[#EE7A36] mt-1 flex-shrink-0" />
+    <a
+      href="https://wa.me/03275518166"
+      className="text-gray-400 hover:text-[#EE7A36] transition-colors"
+    >
+      0327 5518166
+    </a>
+  </li>
+
+  <li className="flex items-start gap-2">
+    <PhoneCall size={18} className="text-[#EE7A36] mt-1 flex-shrink-0" />
+    <a
+      href="tel:0512120340"
+      className="text-gray-400 hover:text-[#EE7A36] transition-colors"
+    >
+      051 2120340
+    </a>
+  </li>
+
+  <li className="flex items-start gap-2">
+    <Mail size={18} className="text-[#EE7A36] mt-1 flex-shrink-0" />
+    <a
+      href="mailto:handhvisaconsultants@gmail.com"
+      className="text-gray-400 hover:text-[#EE7A36] transition-colors break-all"
+    >
+      handhvisaconsultants@gmail.com
+    </a>
+  </li>
+
+  <li className="flex items-start gap-2">
+    <MapPin size={18} className="text-[#EE7A36] mt-1 flex-shrink-0" />
+    <a
+      href="https://www.google.com/maps?q=ATS+Centre,+3rd+Floor,+AK+Fazal+e+Haq+Road,+G6+Blue+Area,+Islamabad,+44000"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="text-gray-400 hover:text-[#EE7A36] transition-colors"
+    >
+      ATS Centre, 3rd Floor, AK Fazal e Haq Road, G6/Blue Area, Islamabad, 44000
+    </a>
+  </li>
+</ul>
+
           </motion.div>
         </div>
 
         {/* Social Links */}
         <div className="border-t border-gray-300 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-gray-400 text-sm">&copy; 2025 H&H Consultant. All rights reserved.</p>
+          <p className="text-gray-400 text-sm">
+            &copy; 2025 H&H Consultant. All rights reserved.
+          </p>
           <div className="flex gap-4">
             {[Facebook, Instagram, Linkedin].map((Icon, i) => (
               <motion.a
@@ -126,5 +197,5 @@ export default function Footer() {
         </div>
       </div>
     </footer>
-  )
+  );
 }

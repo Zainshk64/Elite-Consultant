@@ -67,9 +67,8 @@ export default function RegisterPage() {
                   transition={{ delay: 0.3 }}
                   className="flex items-center gap-3 mb-8"
                 >
-                  <div className="w-12 h-12 bg-gradient-to-br from-[#EE7A36] to-orange-600 rounded-2xl flex items-center justify-center shadow-lg">
-                    <Sparkles className="text-white" size={24} />
-                  </div>
+                                                   <img src="/logo.png" width={60} alt="" />
+
                   <div>
                     <h3 className="text-2xl font-bold text-gray-800">H&H Consultant</h3>
                     <p className="text-[#EE7A36] text-sm font-semibold">Your Success Partner</p>
