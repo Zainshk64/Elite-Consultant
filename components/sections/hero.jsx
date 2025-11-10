@@ -43,6 +43,31 @@ export default function Hero() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const [country, setCountry] = useState("");
+  const [currency, setCurrency] = useState("$");
+
+  const handleCountryChange = (e) => {
+    const selected = e.target.value;
+    setCountry(selected);
+
+    // Update currency symbol based on country
+    const currencyMap = {
+      USA: "$",
+      UK: "£",
+      Canada: "C$",
+      Australia: "A$",
+      Sweden: "kr",
+      France: "€",
+      Germany: "€",
+      Lithuania: "€",
+      Georgia: "₾",
+      Malaysia: "RM",
+    };
+
+    setCurrency(currencyMap[selected] || "$");
+  };
+
+
   return (
     <section className="relative min-h-screen flex items-center md:px-14 py-34 overflow-hidden">
       {/* ===== MOBILE: Static Image ===== */}
@@ -143,63 +168,77 @@ export default function Hero() {
                  max-w-7xl  mt-6 md:mt-7"
         >
           <form className="flex flex-col lg:flex-row flex-wrap gap-4 lg:gap-6 items-center justify-center w-full">
-            {/* Dropdowns */}
-            <select className="px-4 py-3 rounded-full bg-white/10 text-white text-sm outline-none border border-white/10 w-full sm:w-[45%] lg:w-auto">
-              <option className="bg-gray-400">Select Country</option>
-              <option className="bg-gray-400">Australia</option>
-              <option className="bg-gray-400">Canada</option>
-              <option className="bg-gray-400">UK</option>
-              <option className="bg-gray-400">USA</option>
-            </select>
+      {/* Country Select */}
+      <select
+        onChange={handleCountryChange}
+        value={country}
+        className="px-4 py-3 rounded-full bg-white/10 text-white text-sm outline-none border border-white/10 w-full sm:w-[45%] lg:w-auto"
+      >
+        <option value="" className="bg-gray-400">Select Country</option>
+        <option className="bg-gray-400">USA</option>
+        <option className="bg-gray-400">UK</option>
+        <option className="bg-gray-400">Canada</option>
+        <option className="bg-gray-400">Australia</option>
+        <option className="bg-gray-400">Sweden</option>
+        <option className="bg-gray-400">France</option>
+        <option className="bg-gray-400">Germany</option>
+        <option className="bg-gray-400">Lithuania</option>
+        <option className="bg-gray-400">Georgia</option>
+        <option className="bg-gray-400">Malaysia</option>
+      </select>
 
-            <select className="px-4 py-3 rounded-full bg-white/10 text-white text-sm outline-none border border-white/10 w-full sm:w-[45%] lg:w-auto">
-              <option className="bg-gray-400">Course Type</option>
-              <option className="bg-gray-400">Undergraduate</option>
-              <option className="bg-gray-400">Postgraduate</option>
-              <option className="bg-gray-400">Diploma</option>
-            </select>
+      {/* Course Type */}
+      <select className="px-4 py-3 rounded-full bg-white/10 text-white text-sm outline-none border border-white/10 w-full sm:w-[45%] lg:w-auto">
+        <option className="bg-gray-400">Course Type</option>
+        <option className="bg-gray-400">Undergraduate</option>
+        <option className="bg-gray-400">Postgraduate</option>
+        <option className="bg-gray-400">Diploma</option>
+      </select>
 
-            <select className="px-4 py-3 rounded-full bg-white/10 text-white text-sm outline-none border border-white/10 w-full sm:w-[45%] lg:w-auto">
-              <option>Budget Range</option>
-              <option className="bg-gray-400">Below $10,000</option>
-              <option className="bg-gray-400">$10,000 – $20,000</option>
-              <option className="bg-gray-400">Above $20,000</option>
-            </select>
+      {/* Budget Range - dynamic currency */}
+      <select className="px-4 py-3 rounded-full bg-white/10 text-white text-sm outline-none border border-white/10 w-full sm:w-[45%] lg:w-auto">
+        <option className="bg-gray-400">Budget Range</option>
+        <option className="bg-gray-400">Below {currency}10,000</option>
+        <option className="bg-gray-400">
+          {currency}10,000 – {currency}20,000
+        </option>
+        <option className="bg-gray-400">Above {currency}20,000</option>
+      </select>
 
-            <select className="px-4 py-3 rounded-full bg-white/10 text-white text-sm outline-none border border-white/10 w-full sm:w-[45%] lg:w-auto">
-              <option className="bg-gray-400">IELTS Required?</option>
-              <option className="bg-gray-400">Yes</option>
-              <option className="bg-gray-400">No</option>
-            </select>
+      {/* IELTS Required */}
+      <select className="px-4 py-3 rounded-full bg-white/10 text-white text-sm outline-none border border-white/10 w-full sm:w-[45%] lg:w-auto">
+        <option className="bg-gray-400">IELTS Required?</option>
+        <option className="bg-gray-400">Yes</option>
+        <option className="bg-gray-400">No</option>
+      </select>
 
-            {/* Primary Action */}
-            <button
-              type="submit"
-              className="px-6 py-3 border-2 border-[#EE7A36]/50 text-orange-300 
-                     rounded-full cursor-pointer font-semibold hover:bg-[#EE7A36]/10 
-                     hover:border-[#EE7A36] transition-all duration-300 backdrop-blur-sm
-                     w-full sm:w-[45%] lg:w-auto"
-            >
-              Check Eligibility
-            </button>
+      {/* Buttons */}
+      <button
+        type="submit"
+        className="px-6 py-3 border-2 border-[#EE7A36]/50 text-orange-300 
+               rounded-full cursor-pointer font-semibold hover:bg-[#EE7A36]/10 
+               hover:border-[#EE7A36] transition-all duration-300 backdrop-blur-sm
+               w-full sm:w-[45%] lg:w-auto"
+      >
+        Check Eligibility
+      </button>
 
-            {/* Secondary Action */}
-            <Link href="/appointment" className="w-full sm:w-[45%] lg:w-auto">
-              <motion.div
-                className="group px-6 py-3 bg-[#EE7A36] text-white rounded-full font-semibold 
-                       hover:shadow-2xl hover:shadow-[#EE7A36]/40 transition-all duration-300 
-                       flex items-center justify-center gap-2 border border-orange-400/20"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                Book Consultation
-                <ArrowRight
-                  className="group-hover:translate-x-1 transition-transform"
-                  size={20}
-                />
-              </motion.div>
-            </Link>
-          </form>
+      <Link href="/appointment" className="w-full sm:w-[45%] lg:w-auto">
+        <motion.div
+          className="group px-6 py-3 bg-[#EE7A36] text-white rounded-full font-semibold 
+                 hover:shadow-2xl hover:shadow-[#EE7A36]/40 transition-all duration-300 
+                 flex items-center justify-center gap-2 border border-orange-400/20"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+        >
+          Book Consultation
+          <ArrowRight
+            className="group-hover:translate-x-1 transition-transform"
+            size={20}
+          />
+        </motion.div>
+      </Link>
+    </form>
         </motion.div>
 
         {/* Buttons */}
