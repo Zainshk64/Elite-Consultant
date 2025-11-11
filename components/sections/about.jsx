@@ -61,9 +61,9 @@ export default function About() {
             viewport={{ once: true }}
             className="order-2 md:order-1"
           >
-            <h2 className="text-3xl sm:text-4xl font-bold mb-6 leading-tight">
-              Your Visa Success <br className="hidden sm:block" /> Awaits
-            </h2>
+    <h2 className="text-3xl sm:text-4xl  font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#EE7A36] to-orange-600 mb-6 leading-tight [text-shadow:_0_4px_8px_rgb(238_122_54_/_0.3)]">
+  Your Visa Success <br className="hidden sm:block" /> Awaits
+</h2>
             <p className="text-gray-400 text-base sm:text-lg leading-relaxed">
               Experience hassle-free visa services designed to fit your budget.
               At H & H Visa Consulting, we prioritize affordability without
@@ -108,10 +108,10 @@ export default function About() {
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl sm:text-4xl font-bold mb-6 leading-tight">
-              Lighting Your Way with <br className="hidden sm:block" /> Our
-              Immigration Vision
-            </h2>
+            <h2 className="text-3xl sm:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#EE7A36] to-orange-600 mb-6 leading-tight [text-shadow:_0_4px_8px_rgb(238_122_54_/_0.3)]">
+Lighting Your Way with <br className="hidden sm:block" /> Our Immigration Vision
+</h2>
+            
             <p className="text-gray-400 text-base sm:text-lg leading-relaxed">
               At H & H Visa Consulting, we turn immigration challenges into
               opportunities. Our mission is to bring families together, create
@@ -131,10 +131,9 @@ export default function About() {
             viewport={{ once: true }}
             className="order-2 md:order-1"
           >
-            <h2 className="text-3xl sm:text-4xl font-bold mb-6 leading-tight">
-              Our Immigration Service history <br className="hidden sm:block" />{" "}
-              Immigration Vision
-            </h2>
+            <h2 className="text-3xl sm:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#EE7A36] to-orange-600 mb-6 leading-tight [text-shadow:_0_4px_8px_rgb(238_122_54_/_0.3)]">
+  Our Immigration Service <br className="hidden sm:block" /> Immigration Vision
+</h2>
             <p className="text-gray-400 text-base sm:text-lg leading-relaxed">
               Our history began with a vision to make the immigration process smoother and more accessible for individuals and families around the world. With a deep understanding of the challenges that accompany moving to a new country,
             </p>
