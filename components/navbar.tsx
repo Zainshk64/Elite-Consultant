@@ -12,7 +12,7 @@ export default function Navbar() {
   const [openMobileDropdown, setOpenMobileDropdown] = useState<string | null>(null);
 
   const navItems = [
-    { label: "Home", href: "/" },
+    // { label: "Home", href: "/" },
     { label: "Services", href: "/services" },
     { label: "About", href: "/about" },
     { label: "Careers", href: "/career" },
