@@ -80,7 +80,7 @@ export default function About() {
             className="order-1 md:order-2"
           >
             <img
-              src="https://handhvisaconsultants.com/wp-content/uploads/2023/12/about_img3.jpg"
+              src="https://res.cloudinary.com/daljxhxzf/image/upload/v1763048750/img_kqil6p.jpg"
               alt="Visa Success"
               className="rounded-xl shadow-xl w-full object-cover h-auto"
             />
@@ -96,7 +96,7 @@ export default function About() {
             viewport={{ once: true }}
           >
             <img
-              src="https://handhvisaconsultants.com/wp-content/uploads/2023/12/about_img3.jpg"
+              src="https://res.cloudinary.com/daljxhxzf/image/upload/v1763048750/img_kqil6p.jpg"
               alt="Immigration Vision"
               className="rounded-xl shadow-xl w-full object-cover h-auto"
             />
@@ -147,7 +147,7 @@ Lighting Your Way with <br className="hidden sm:block" /> Our Immigration Vision
             className="order-1 md:order-2"
           >
             <img
-              src="https://handhvisaconsultants.com/wp-content/uploads/2023/12/about_img3.jpg"
+              src="https://res.cloudinary.com/daljxhxzf/image/upload/v1763048750/img_kqil6p.jpg"
               alt="Immigration Vision"
               className="rounded-xl shadow-xl w-full object-cover h-auto"
             />

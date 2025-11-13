@@ -9,7 +9,9 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [showBackToTop, setShowBackToTop] = useState(false);
-  const [openMobileDropdown, setOpenMobileDropdown] = useState<string | null>(null);
+  const [openMobileDropdown, setOpenMobileDropdown] = useState<string | null>(
+    null
+  );
 
   const navItems = [
     // { label: "Home", href: "/" },
@@ -74,19 +76,30 @@ export default function Navbar() {
           <div className="relative px-6 lg:px-8">
             <div className="flex justify-between items-center h-20">
               {/* Logo */}
-              <Link href="/" className="flex items-center gap-3 group relative z-10">
+              <Link
+                href="/"
+                className="flex items-center gap-3 group relative z-10"
+              >
                 <motion.div
                   whileHover={{ rotate: 360, scale: 1.1 }}
                   transition={{ duration: 0.6 }}
                   className="relative"
                 >
-                  <img src="/logo.png" width={60} height={60} alt="H&H Logo" className="rounded-lg" />
+                  <img
+                    src="/logo.png"
+                    width={60}
+                    height={60}
+                    alt="H&H Logo"
+                    className="rounded-lg"
+                  />
                 </motion.div>
                 <div className="hidden lg:block">
                   <span className="block font-bold text-lg text-transparent bg-clip-text bg-gradient-to-r from-[#EE7A36] to-orange-700">
                     H&H Consultant
                   </span>
-                  <span className="block text-xs text-gray-500 -mt-1">Your Success Partner</span>
+                  <span className="block text-xs text-gray-500 -mt-1">
+                    Your Success Partner
+                  </span>
                 </div>
               </Link>
 
@@ -96,9 +109,18 @@ export default function Navbar() {
                   const isDropdown = !!item.dropdown;
 
                   return isDropdown ? (
-                    <DesktopDropdown key={item.label} item={item} index={index} />
+                    <DesktopDropdown
+                      key={item.label}
+                      item={item}
+                      index={index}
+                    />
                   ) : (
-                    <NavLink key={item.href} href={item.href} label={item.label} index={index} />
+                    <NavLink
+                      key={item.href}
+                      href={item.href}
+                      label={item.label}
+                      index={index}
+                    />
                   );
                 })}
               </div>
@@ -107,12 +129,14 @@ export default function Navbar() {
               <div className="hidden md:flex items-center gap-3">
                 <Link href="/register">
                   <motion.button
-                    className="relative px-6 py-3 bg-gradient-to-r from-[#EE7A36] to-orange-400 text-white font-semibold rounded-xl overflow-hidden group"
+                    className="relative px-6 py-3 bg-gradient-to-r cursor-pointer from-[#EE7A36] to-orange-400 text-white font-semibold rounded-xl overflow-hidden group"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                   >
-                    <span className="relative z-10 flex items-center gap-2">Register Now</span>
-                    <div className="absolute inset-0 bg-gradient-to-r from-orange-600 to-orange-700 opacity-0 group-hover:opacity-100 transition-opacity" />
+                    <span className="relative z-10 flex items-center gap-2">
+                      Register Now
+                    </span>
+                    {/* <div className="absolute inset-0 bg-gradient-to-r from-orange-600 to-orange-700 opacity-0 group-hover:opacity-30 transition-opacity" /> */}
                   </motion.button>
                 </Link>
               </div>
@@ -154,8 +178,15 @@ export default function Navbar() {
               <div className="p-8">
                 <div className="flex justify-between items-center mb-10">
                   <div className="flex items-center gap-3">
-                    <img src="/logo.png" width={50} alt="Logo" className="rounded-lg" />
-                    <span className="font-bold text-lg text-gray-800">Menu</span>
+                    <img
+                      src="/logo.png"
+                      width={50}
+                      alt="Logo"
+                      className="rounded-lg"
+                    />
+                    <span className="font-bold text-lg text-gray-800">
+                      Menu
+                    </span>
                   </div>
                   <button
                     onClick={() => setIsOpen(false)}
@@ -174,7 +205,9 @@ export default function Navbar() {
                       <div key={item.label}>
                         <button
                           onClick={() =>
-                            setOpenMobileDropdown(isOpenDropdown ? null : item.label)
+                            setOpenMobileDropdown(
+                              isOpenDropdown ? null : item.label
+                            )
                           }
                           className="w-full flex items-center justify-between px-5 py-4 rounded-xl bg-orange-50 hover:bg-orange-100 border border-transparent hover:border-orange-300 transition-all group"
                         >
@@ -276,7 +309,10 @@ export default function Navbar() {
             transition={{ type: "spring", stiffness: 260, damping: 20 }}
             aria-label="Back to top"
           >
-            <ArrowUp className="group-hover:-translate-y-1 transition-transform" size={24} />
+            <ArrowUp
+              className="group-hover:-translate-y-1 transition-transform"
+              size={24}
+            />
             <div className="absolute -inset-1 bg-gradient-to-r from-[#EE7A36] to-orange-400 rounded blur opacity-40 group-hover:opacity-60 transition-opacity" />
           </motion.button>
         )}
@@ -286,7 +322,15 @@ export default function Navbar() {
 }
 
 // Reusable Components
-const NavLink = ({ href, label, index }: { href: string; label: string; index: number }) => (
+const NavLink = ({
+  href,
+  label,
+  index,
+}: {
+  href: string;
+  label: string;
+  index: number;
+}) => (
   <Link href={href}>
     <motion.div
       className="relative px-5 py-2.5 group cursor-pointer"
