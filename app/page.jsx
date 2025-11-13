@@ -22,7 +22,6 @@ export default function Home() {
       <PopularDestinations/>
       <StudyDestinations/>
       <Services />
-      {/* <StudyAbroadcard/> */}
       <WhyChooseUs />
       <Testimonials />
       <TeamSection />
